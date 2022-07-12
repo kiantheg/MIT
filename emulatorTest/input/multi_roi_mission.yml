@@ -1,0 +1,33 @@
+# Platform parameters
+max_speed: 4 # Maximum platform speed (m/s) constraint
+waypoints_pos_vel: # Waypoint (X, Y, Z) coordinates (m) and (V_X, V_Y, V_Z) velocities (m/s); one waypoint per row
+  - [ 0,  0,  0, 0, 0,  1] 
+  - [ 0,  0, 15, 1, 0,  0]
+  - [20,  0, 15, 1, 0,  0]
+  - [20, 20, 15, 0, 1,  0]
+  - [40, 20, 10, 1, 0,  0]
+  - [40,  0, 10, 0, 1,  0]
+  - [40,  0,  0, 0, 0, -1]
+init_xy_heading: [1, 0] # Initial (X, Y) heading (vector) of the platform; once in motion it will snap to velocity
+
+# Radar parameters 
+radar_yaw: -90 # Fixed radar orientation as yaw (degrees) from platform (V_X, V_Y) heading in standard aircraft axes (https://www.grc.nasa.gov/www/k-12/airplane/rotations.html)
+beamwidth: 60 # Radar azimuthal beamwidth (degrees)
+
+# Regions-of-interest (ROIs) vertices' (X, Y) coordinates to be visualized with plot_mission.py
+roi: 
+  one:
+    - [ 5, 10]
+    - [ 5, 20]
+    - [15, 20]
+    - [15, 10]
+  two:
+    - [25, 30]
+    - [25, 35]
+    - [35, 35]
+    - [35, 30]
+  three:
+    - [50, 15]
+    - [50,  5]
+    - [70,  5]
+    - [70, 15]
