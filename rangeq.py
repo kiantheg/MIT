@@ -3,7 +3,7 @@
 ##2r = tc
 ##R = tc/2
 
-def rangefinder(Pt):
+def rangefinder(t):
     c = 299792458
     R = tc/2
     return R
