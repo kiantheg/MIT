@@ -1,11 +1,10 @@
 ## range eq
-## Pt = 2r/c
-##2r = Ptc
-##R = Pt/2c
+## t = 2r/c
+##2r = tc
+##R = tc/2
 
-def rangefinder(Pt):
+def rangefinder(t):
     c = 299792458
-    R = Pt/c
+    R = tc/2
     return R
 
-    
