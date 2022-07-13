@@ -14,7 +14,7 @@ port = 10000
 #s.connect(('localhost', port))
 server_address = ('localhost', port)
 s.connect(server_address)
-z = 'Hello World'
+z = hex(17)
 s.sendall(z.encode())
 
 data, address = s.recvfrom(4096)
