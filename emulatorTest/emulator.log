@@ -1,0 +1,1190 @@
+2022-07-12 17:28:12,279   STATE       STARTING emulator...
+2022-07-12 17:28:12,279   STATE       WAIT for readiness confirmation...
+2022-07-12 17:28:12,282   STATE       BOOTING...
+2022-07-12 17:28:12,282   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:28:12,283   STATE       OPENING connection for host...
+2022-07-12 17:28:12,284   STATE       OPENED connection for host.
+2022-07-12 17:28:12,284   STATE       READY to respond to requests.
+2022-07-12 17:28:22,286   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 17:28:22,286   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:28:22,287   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:28:22,287   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:28:22,287   STATE       CLOSING connection to host...
+2022-07-12 17:28:22,287   STATE       CLOSED connection to host.
+2022-07-12 17:28:22,287   STATE       SHUT DOWN complete.
+2022-07-12 17:30:36,587   STATE       STARTING emulator...
+2022-07-12 17:30:36,588   STATE       WAIT for readiness confirmation...
+2022-07-12 17:30:36,589   STATE       BOOTING...
+2022-07-12 17:30:36,589   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:30:36,590   STATE       OPENING connection for host...
+2022-07-12 17:30:36,591   STATE       OPENED connection for host.
+2022-07-12 17:30:36,591   STATE       READY to respond to requests.
+2022-07-12 17:30:36,658   ERROR       FATAL EXCEPTION ENCOUNTERED!
+Traceback (most recent call last):
+  File "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/src/emulator.py", line 1460, in main
+    emulator.listen_and_respond()
+  File "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/src/emulator.py", line 664, in listen_and_respond
+    request_name, request_payload, request_status = self.decode_msg(msg)
+  File "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/src/emulator.py", line 492, in decode_msg
+    raise NotImplementedError(f"Message's apparent type {msg_type} does not match any "
+NotImplementedError: Message's apparent type 18533 does not match any known/implemented!
+2022-07-12 17:30:36,666   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:30:36,666   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:30:36,666   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:30:36,666   STATE       CLOSING connection to host...
+2022-07-12 17:30:36,668   STATE       CLOSED connection to host.
+2022-07-12 17:30:36,669   STATE       SHUT DOWN complete.
+2022-07-12 17:35:37,215   STATE       STARTING emulator...
+2022-07-12 17:35:37,217   STATE       WAIT for readiness confirmation...
+2022-07-12 17:35:37,218   STATE       BOOTING...
+2022-07-12 17:35:37,218   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:35:37,218   STATE       OPENING connection for host...
+2022-07-12 17:35:37,222   STATE       OPENED connection for host.
+2022-07-12 17:35:37,222   STATE       READY to respond to requests.
+2022-07-12 17:35:47,224   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 17:35:47,225   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:35:47,225   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:35:47,225   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:35:47,226   STATE       CLOSING connection to host...
+2022-07-12 17:35:47,227   STATE       CLOSED connection to host.
+2022-07-12 17:35:47,227   STATE       SHUT DOWN complete.
+2022-07-12 17:44:45,639   STATE       STARTING emulator...
+2022-07-12 17:44:45,641   STATE       WAIT for readiness confirmation...
+2022-07-12 17:44:45,642   STATE       BOOTING...
+2022-07-12 17:44:45,642   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:44:45,642   STATE       OPENING connection for host...
+2022-07-12 17:44:45,644   STATE       OPENED connection for host.
+2022-07-12 17:44:45,644   STATE       READY to respond to requests.
+2022-07-12 17:44:55,648   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 17:44:55,649   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:44:55,649   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:44:55,649   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:44:55,649   STATE       CLOSING connection to host...
+2022-07-12 17:44:55,649   STATE       CLOSED connection to host.
+2022-07-12 17:44:55,649   STATE       SHUT DOWN complete.
+2022-07-12 17:45:49,286   STATE       STARTING emulator...
+2022-07-12 17:45:49,288   STATE       WAIT for readiness confirmation...
+2022-07-12 17:45:49,289   STATE       BOOTING...
+2022-07-12 17:45:49,289   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:45:49,289   STATE       OPENING connection for host...
+2022-07-12 17:45:49,291   STATE       OPENED connection for host.
+2022-07-12 17:45:49,291   STATE       READY to respond to requests.
+2022-07-12 17:45:59,295   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 17:45:59,297   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:45:59,297   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:45:59,297   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:45:59,297   STATE       CLOSING connection to host...
+2022-07-12 17:45:59,297   STATE       CLOSED connection to host.
+2022-07-12 17:45:59,297   STATE       SHUT DOWN complete.
+2022-07-12 17:46:08,854   STATE       STARTING emulator...
+2022-07-12 17:46:08,855   STATE       WAIT for readiness confirmation...
+2022-07-12 17:46:08,856   STATE       BOOTING...
+2022-07-12 17:46:08,856   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:46:08,857   STATE       OPENING connection for host...
+2022-07-12 17:46:08,858   STATE       OPENED connection for host.
+2022-07-12 17:46:08,858   STATE       READY to respond to requests.
+2022-07-12 17:46:18,863   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 17:46:18,863   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:46:18,863   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:46:18,863   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:46:18,863   STATE       CLOSING connection to host...
+2022-07-12 17:46:18,864   STATE       CLOSED connection to host.
+2022-07-12 17:46:18,864   STATE       SHUT DOWN complete.
+2022-07-12 17:48:10,010   STATE       STARTING emulator...
+2022-07-12 17:48:10,011   STATE       WAIT for readiness confirmation...
+2022-07-12 17:48:10,012   STATE       BOOTING...
+2022-07-12 17:48:10,013   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:48:10,013   STATE       OPENING connection for host...
+2022-07-12 17:48:10,014   STATE       OPENED connection for host.
+2022-07-12 17:48:10,015   STATE       READY to respond to requests.
+2022-07-12 17:48:20,019   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 17:48:20,019   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:48:20,019   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:48:20,019   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:48:20,020   STATE       CLOSING connection to host...
+2022-07-12 17:48:20,020   STATE       CLOSED connection to host.
+2022-07-12 17:48:20,023   STATE       SHUT DOWN complete.
+2022-07-12 17:49:36,033   STATE       STARTING emulator...
+2022-07-12 17:49:36,035   STATE       WAIT for readiness confirmation...
+2022-07-12 17:49:36,036   STATE       BOOTING...
+2022-07-12 17:49:36,036   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:49:36,036   STATE       OPENING connection for host...
+2022-07-12 17:49:36,038   STATE       OPENED connection for host.
+2022-07-12 17:49:36,038   STATE       READY to respond to requests.
+2022-07-12 17:49:46,041   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 17:49:46,041   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:49:46,042   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:49:46,042   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:49:46,042   STATE       CLOSING connection to host...
+2022-07-12 17:49:46,043   STATE       CLOSED connection to host.
+2022-07-12 17:49:46,043   STATE       SHUT DOWN complete.
+2022-07-12 17:50:54,123   STATE       STARTING emulator...
+2022-07-12 17:50:54,123   STATE       WAIT for readiness confirmation...
+2022-07-12 17:50:54,125   STATE       BOOTING...
+2022-07-12 17:50:54,125   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:50:54,125   STATE       OPENING connection for host...
+2022-07-12 17:50:54,127   STATE       OPENED connection for host.
+2022-07-12 17:50:54,128   STATE       READY to respond to requests.
+2022-07-12 17:51:04,130   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 17:51:04,131   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:51:04,131   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:51:04,132   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:51:04,132   STATE       CLOSING connection to host...
+2022-07-12 17:51:04,132   STATE       CLOSED connection to host.
+2022-07-12 17:51:04,132   STATE       SHUT DOWN complete.
+2022-07-12 17:56:56,817   STATE       STARTING emulator...
+2022-07-12 17:56:56,818   STATE       WAIT for readiness confirmation...
+2022-07-12 17:56:56,820   STATE       BOOTING...
+2022-07-12 17:56:56,821   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 17:56:56,821   STATE       OPENING connection for host...
+2022-07-12 17:56:56,823   STATE       OPENED connection for host.
+2022-07-12 17:56:56,823   STATE       READY to respond to requests.
+2022-07-12 17:57:06,827   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 17:57:06,828   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 17:57:06,828   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 17:57:06,829   STATE       SHUTTING DOWN emulator...
+2022-07-12 17:57:06,829   STATE       CLOSING connection to host...
+2022-07-12 17:57:06,829   STATE       CLOSED connection to host.
+2022-07-12 17:57:06,830   STATE       SHUT DOWN complete.
+2022-07-12 18:00:30,501   STATE       STARTING emulator...
+2022-07-12 18:00:30,502   STATE       WAIT for readiness confirmation...
+2022-07-12 18:00:30,504   STATE       BOOTING...
+2022-07-12 18:00:30,504   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 18:00:30,505   STATE       OPENING connection for host...
+2022-07-12 18:00:30,507   STATE       OPENED connection for host.
+2022-07-12 18:00:30,508   STATE       READY to respond to requests.
+2022-07-12 18:00:40,512   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 18:00:40,513   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-12 18:00:40,513   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 18:00:40,514   STATE       SHUTTING DOWN emulator...
+2022-07-12 18:00:40,514   STATE       CLOSING connection to host...
+2022-07-12 18:00:40,514   STATE       CLOSED connection to host.
+2022-07-12 18:00:40,515   STATE       SHUT DOWN complete.
+2022-07-12 18:00:50,058   STATE       STARTING emulator...
+2022-07-12 18:00:50,058   STATE       WAIT for readiness confirmation...
+2022-07-12 18:00:50,060   STATE       BOOTING...
+2022-07-12 18:00:50,061   STATE       BOOTED in 'develop' operational mode.
+2022-07-12 18:00:50,061   STATE       OPENING connection for host...
+2022-07-12 18:00:50,062   STATE       OPENED connection for host.
+2022-07-12 18:00:50,064   STATE       READY to respond to requests.
+2022-07-12 18:00:51,478   INFO        RECEIVE MESSAGE #1 --> MRM_SET_CONFIG_REQUEST.
+2022-07-12 18:00:51,479   STATE       CONFIGURATION SET request received...
+2022-07-12 18:00:51,479   STATE       FAILED to set configuration!
+2022-07-12 18:00:51,479   STATE       CONFIGURATION SET.
+2022-07-12 18:00:51,479   INFO        SEND MESSAGE #1 --> MRM_SET_CONFIG_CONFIRM.
+2022-07-12 18:01:01,485   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-12 18:01:01,486   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-12 18:01:01,486   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-12 18:01:01,486   STATE       SHUTTING DOWN emulator...
+2022-07-12 18:01:01,486   STATE       CLOSING connection to host...
+2022-07-12 18:01:01,486   STATE       CLOSED connection to host.
+2022-07-12 18:01:01,486   STATE       SHUT DOWN complete.
+2022-07-13 10:18:28,359   STATE       STARTING emulator...
+2022-07-13 10:18:28,363   STATE       WAIT for readiness confirmation...
+2022-07-13 10:18:28,366   STATE       BOOTING...
+2022-07-13 10:18:28,367   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:18:28,368   STATE       OPENING connection for host...
+2022-07-13 10:18:28,373   STATE       OPENED connection for host.
+2022-07-13 10:18:28,374   STATE       READY to respond to requests.
+2022-07-13 10:18:31,211   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:18:31,212   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:18:31,212   STATE       FAILED to perform communication check!
+2022-07-13 10:18:31,213   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:18:31,213   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:18:41,219   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:18:41,221   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:18:41,222   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:18:41,223   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:18:41,223   STATE       CLOSING connection to host...
+2022-07-13 10:18:41,223   STATE       CLOSED connection to host.
+2022-07-13 10:18:41,223   STATE       SHUT DOWN complete.
+2022-07-13 10:19:18,845   STATE       STARTING emulator...
+2022-07-13 10:19:18,846   STATE       WAIT for readiness confirmation...
+2022-07-13 10:19:18,847   STATE       BOOTING...
+2022-07-13 10:19:18,847   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:19:18,848   STATE       OPENING connection for host...
+2022-07-13 10:19:18,849   STATE       OPENED connection for host.
+2022-07-13 10:19:18,849   STATE       READY to respond to requests.
+2022-07-13 10:19:28,855   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:19:28,858   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-13 10:19:28,858   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:19:28,858   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:19:28,858   STATE       CLOSING connection to host...
+2022-07-13 10:19:28,859   STATE       CLOSED connection to host.
+2022-07-13 10:19:28,859   STATE       SHUT DOWN complete.
+2022-07-13 10:22:13,673   STATE       STARTING emulator...
+2022-07-13 10:22:13,675   STATE       WAIT for readiness confirmation...
+2022-07-13 10:22:13,676   STATE       BOOTING...
+2022-07-13 10:22:13,676   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:22:13,676   STATE       OPENING connection for host...
+2022-07-13 10:22:13,678   STATE       OPENED connection for host.
+2022-07-13 10:22:13,678   STATE       READY to respond to requests.
+2022-07-13 10:22:15,225   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:22:15,226   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:22:15,226   STATE       FAILED to perform communication check!
+2022-07-13 10:22:15,226   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:22:15,227   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:22:25,234   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:22:25,235   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:22:25,235   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:22:25,235   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:22:25,235   STATE       CLOSING connection to host...
+2022-07-13 10:22:25,236   STATE       CLOSED connection to host.
+2022-07-13 10:22:25,236   STATE       SHUT DOWN complete.
+2022-07-13 10:22:50,419   STATE       STARTING emulator...
+2022-07-13 10:22:50,421   STATE       WAIT for readiness confirmation...
+2022-07-13 10:22:50,422   STATE       BOOTING...
+2022-07-13 10:22:50,422   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:22:50,422   STATE       OPENING connection for host...
+2022-07-13 10:22:50,424   STATE       OPENED connection for host.
+2022-07-13 10:22:50,424   STATE       READY to respond to requests.
+2022-07-13 10:22:51,920   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:22:51,921   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:22:51,921   STATE       FAILED to perform communication check!
+2022-07-13 10:22:51,921   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:22:51,921   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:23:01,926   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:23:01,928   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:23:01,930   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:23:01,931   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:23:01,931   STATE       CLOSING connection to host...
+2022-07-13 10:23:01,932   STATE       CLOSED connection to host.
+2022-07-13 10:23:01,932   STATE       SHUT DOWN complete.
+2022-07-13 10:24:51,894   STATE       STARTING emulator...
+2022-07-13 10:24:51,896   STATE       WAIT for readiness confirmation...
+2022-07-13 10:24:51,898   STATE       BOOTING...
+2022-07-13 10:24:51,898   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:24:51,898   STATE       OPENING connection for host...
+2022-07-13 10:24:51,900   STATE       OPENED connection for host.
+2022-07-13 10:24:51,900   STATE       READY to respond to requests.
+2022-07-13 10:24:52,711   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:24:52,711   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:24:52,712   STATE       FAILED to perform communication check!
+2022-07-13 10:24:52,712   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:24:52,716   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:25:02,723   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:25:02,724   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:25:02,724   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:25:02,724   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:25:02,725   STATE       CLOSING connection to host...
+2022-07-13 10:25:02,725   STATE       CLOSED connection to host.
+2022-07-13 10:25:02,725   STATE       SHUT DOWN complete.
+2022-07-13 10:28:41,986   STATE       STARTING emulator...
+2022-07-13 10:28:41,988   STATE       WAIT for readiness confirmation...
+2022-07-13 10:28:41,989   STATE       BOOTING...
+2022-07-13 10:28:41,989   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:28:41,990   STATE       OPENING connection for host...
+2022-07-13 10:28:41,992   STATE       OPENED connection for host.
+2022-07-13 10:28:41,993   STATE       READY to respond to requests.
+2022-07-13 10:28:43,384   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:28:43,385   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:28:43,385   STATE       FAILED to perform communication check!
+2022-07-13 10:28:43,385   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:28:43,385   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:28:53,392   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:28:53,392   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:28:53,393   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:28:53,393   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:28:53,393   STATE       CLOSING connection to host...
+2022-07-13 10:28:53,393   STATE       CLOSED connection to host.
+2022-07-13 10:28:53,394   STATE       SHUT DOWN complete.
+2022-07-13 10:29:57,554   STATE       STARTING emulator...
+2022-07-13 10:29:57,554   STATE       WAIT for readiness confirmation...
+2022-07-13 10:29:57,555   STATE       BOOTING...
+2022-07-13 10:29:57,556   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:29:57,556   STATE       OPENING connection for host...
+2022-07-13 10:29:57,559   STATE       OPENED connection for host.
+2022-07-13 10:29:57,559   STATE       READY to respond to requests.
+2022-07-13 10:29:59,543   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:29:59,543   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:29:59,544   STATE       FAILED to perform communication check!
+2022-07-13 10:29:59,544   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:29:59,544   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:30:09,546   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:30:09,547   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:30:09,547   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:30:09,547   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:30:09,547   STATE       CLOSING connection to host...
+2022-07-13 10:30:09,548   STATE       CLOSED connection to host.
+2022-07-13 10:30:09,548   STATE       SHUT DOWN complete.
+2022-07-13 10:37:04,252   STATE       STARTING emulator...
+2022-07-13 10:37:04,254   STATE       WAIT for readiness confirmation...
+2022-07-13 10:37:04,255   STATE       BOOTING...
+2022-07-13 10:37:04,255   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:37:04,255   STATE       OPENING connection for host...
+2022-07-13 10:37:04,257   STATE       OPENED connection for host.
+2022-07-13 10:37:04,258   STATE       READY to respond to requests.
+2022-07-13 10:37:04,448   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:37:04,448   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:37:04,449   STATE       FAILED to perform communication check!
+2022-07-13 10:37:04,449   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:37:04,449   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:37:14,453   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:37:14,454   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:37:14,454   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:37:14,454   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:37:14,455   STATE       CLOSING connection to host...
+2022-07-13 10:37:14,455   STATE       CLOSED connection to host.
+2022-07-13 10:37:14,455   STATE       SHUT DOWN complete.
+2022-07-13 10:37:41,578   STATE       STARTING emulator...
+2022-07-13 10:37:41,578   STATE       WAIT for readiness confirmation...
+2022-07-13 10:37:41,579   STATE       BOOTING...
+2022-07-13 10:37:41,580   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:37:41,580   STATE       OPENING connection for host...
+2022-07-13 10:37:41,581   STATE       OPENED connection for host.
+2022-07-13 10:37:41,581   STATE       READY to respond to requests.
+2022-07-13 10:37:42,571   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:37:42,571   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:37:42,571   STATE       FAILED to perform communication check!
+2022-07-13 10:37:42,572   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:37:42,572   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:37:52,577   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:37:52,577   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:37:52,578   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:37:52,578   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:37:52,578   STATE       CLOSING connection to host...
+2022-07-13 10:37:52,578   STATE       CLOSED connection to host.
+2022-07-13 10:37:52,579   STATE       SHUT DOWN complete.
+2022-07-13 10:39:02,930   STATE       STARTING emulator...
+2022-07-13 10:39:02,933   STATE       WAIT for readiness confirmation...
+2022-07-13 10:39:02,946   STATE       BOOTING...
+2022-07-13 10:39:02,946   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:39:02,946   STATE       OPENING connection for host...
+2022-07-13 10:39:02,948   STATE       OPENED connection for host.
+2022-07-13 10:39:02,949   STATE       READY to respond to requests.
+2022-07-13 10:39:04,187   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:39:04,187   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:39:04,187   STATE       FAILED to perform communication check!
+2022-07-13 10:39:04,187   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:39:04,187   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:39:14,193   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:39:14,193   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:39:14,194   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:39:14,194   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:39:14,194   STATE       CLOSING connection to host...
+2022-07-13 10:39:14,194   STATE       CLOSED connection to host.
+2022-07-13 10:39:14,194   STATE       SHUT DOWN complete.
+2022-07-13 10:39:20,994   STATE       STARTING emulator...
+2022-07-13 10:39:20,995   STATE       WAIT for readiness confirmation...
+2022-07-13 10:39:20,998   STATE       BOOTING...
+2022-07-13 10:39:21,001   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:39:21,001   STATE       OPENING connection for host...
+2022-07-13 10:39:21,003   STATE       OPENED connection for host.
+2022-07-13 10:39:21,003   STATE       READY to respond to requests.
+2022-07-13 10:39:21,901   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:39:21,901   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:39:21,901   STATE       FAILED to perform communication check!
+2022-07-13 10:39:21,902   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:39:21,902   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:39:31,904   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:39:31,904   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:39:31,904   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:39:31,904   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:39:31,904   STATE       CLOSING connection to host...
+2022-07-13 10:39:31,904   STATE       CLOSED connection to host.
+2022-07-13 10:39:31,905   STATE       SHUT DOWN complete.
+2022-07-13 10:40:37,825   STATE       STARTING emulator...
+2022-07-13 10:40:37,827   STATE       WAIT for readiness confirmation...
+2022-07-13 10:40:37,828   STATE       BOOTING...
+2022-07-13 10:40:37,828   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:40:37,828   STATE       OPENING connection for host...
+2022-07-13 10:40:37,832   STATE       OPENED connection for host.
+2022-07-13 10:40:37,833   STATE       READY to respond to requests.
+2022-07-13 10:40:38,646   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:40:38,646   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:40:38,646   STATE       FAILED to perform communication check!
+2022-07-13 10:40:38,647   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:40:38,647   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:40:48,652   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:40:48,652   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:40:48,653   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:40:48,653   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:40:48,653   STATE       CLOSING connection to host...
+2022-07-13 10:40:48,654   STATE       CLOSED connection to host.
+2022-07-13 10:40:48,654   STATE       SHUT DOWN complete.
+2022-07-13 10:44:33,105   STATE       STARTING emulator...
+2022-07-13 10:44:33,107   STATE       WAIT for readiness confirmation...
+2022-07-13 10:44:33,107   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 10:44:33,108   STATE       BOOTING...
+2022-07-13 10:44:33,108   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 10:44:33,109   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:44:33,109   STATE       OPENING connection for host...
+2022-07-13 10:44:33,109   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 10:44:33,110   STATE       OPENED connection for host.
+2022-07-13 10:44:33,110   STATE       READY to respond to requests.
+2022-07-13 10:44:34,919   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 10:44:34,919   DEBUG       Host address --> ('127.0.0.1', 54970).
+2022-07-13 10:44:34,920   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 10:44:34,920   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:44:34,920   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 10:44:34,920   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:44:34,920   STATE       FAILED to perform communication check!
+2022-07-13 10:44:34,920   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 10:44:34,920   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:44:34,921   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:44:34,921   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:44:34,921   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:44:34,921   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:44:34,921   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:44:34,921   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:44:34,921   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:44:34,921   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:44:34,921   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:44:34,922   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 10:44:44,928   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:44:44,928   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:44:44,928   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:44:44,929   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:44:44,929   STATE       CLOSING connection to host...
+2022-07-13 10:44:44,929   STATE       CLOSED connection to host.
+2022-07-13 10:44:44,929   STATE       SHUT DOWN complete.
+2022-07-13 10:45:39,359   STATE       STARTING emulator...
+2022-07-13 10:45:39,359   STATE       WAIT for readiness confirmation...
+2022-07-13 10:45:39,359   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 10:45:39,360   STATE       BOOTING...
+2022-07-13 10:45:39,361   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 10:45:39,361   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:45:39,361   STATE       OPENING connection for host...
+2022-07-13 10:45:39,361   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 10:45:39,363   STATE       OPENED connection for host.
+2022-07-13 10:45:39,364   STATE       READY to respond to requests.
+2022-07-13 10:45:41,928   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 10:45:41,929   DEBUG       Host address --> ('127.0.0.1', 58184).
+2022-07-13 10:45:41,929   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 10:45:41,929   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:45:41,929   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 10:45:41,929   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:45:41,930   STATE       FAILED to perform communication check!
+2022-07-13 10:45:41,930   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 10:45:41,930   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:45:41,930   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:45:41,930   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:45:41,933   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:45:41,934   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:45:41,934   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:45:41,934   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:45:41,934   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:45:41,934   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:45:41,934   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:45:41,935   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 10:45:51,938   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:45:51,938   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:45:51,939   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:45:51,939   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:45:51,939   STATE       CLOSING connection to host...
+2022-07-13 10:45:51,940   STATE       CLOSED connection to host.
+2022-07-13 10:45:51,940   STATE       SHUT DOWN complete.
+2022-07-13 10:56:01,254   STATE       STARTING emulator...
+2022-07-13 10:56:01,256   STATE       WAIT for readiness confirmation...
+2022-07-13 10:56:01,257   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 10:56:01,259   STATE       BOOTING...
+2022-07-13 10:56:01,260   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 10:56:01,260   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:56:01,261   STATE       OPENING connection for host...
+2022-07-13 10:56:01,262   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 10:56:01,263   STATE       OPENED connection for host.
+2022-07-13 10:56:01,263   STATE       READY to respond to requests.
+2022-07-13 10:56:02,916   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 10:56:02,917   DEBUG       Host address --> ('127.0.0.1', 56423).
+2022-07-13 10:56:02,917   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 10:56:02,917   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:56:02,917   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 10:56:02,917   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:56:02,918   STATE       FAILED to perform communication check!
+2022-07-13 10:56:02,918   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 10:56:02,918   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:56:02,919   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:02,919   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:02,919   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:02,919   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:02,919   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:02,920   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:02,920   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:02,920   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:02,920   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:56:02,921   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 10:56:12,928   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:56:12,931   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:56:12,946   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:56:12,960   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:56:12,961   STATE       CLOSING connection to host...
+2022-07-13 10:56:12,961   STATE       CLOSED connection to host.
+2022-07-13 10:56:12,961   STATE       SHUT DOWN complete.
+2022-07-13 10:56:36,870   STATE       STARTING emulator...
+2022-07-13 10:56:36,871   STATE       WAIT for readiness confirmation...
+2022-07-13 10:56:36,872   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 10:56:36,874   STATE       BOOTING...
+2022-07-13 10:56:36,874   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 10:56:36,875   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:56:36,875   STATE       OPENING connection for host...
+2022-07-13 10:56:36,875   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 10:56:36,877   STATE       OPENED connection for host.
+2022-07-13 10:56:36,877   STATE       READY to respond to requests.
+2022-07-13 10:56:37,480   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 10:56:37,480   DEBUG       Host address --> ('127.0.0.1', 50207).
+2022-07-13 10:56:37,480   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 10:56:37,480   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:56:37,480   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 10:56:37,481   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:56:37,481   STATE       FAILED to perform communication check!
+2022-07-13 10:56:37,481   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 10:56:37,481   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:56:37,481   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:37,482   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:37,482   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:37,482   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:37,482   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:37,482   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:37,482   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:37,483   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:56:37,483   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:56:37,483   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 10:56:47,488   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:56:47,488   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:56:47,489   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:56:47,489   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:56:47,489   STATE       CLOSING connection to host...
+2022-07-13 10:56:47,489   STATE       CLOSED connection to host.
+2022-07-13 10:56:47,489   STATE       SHUT DOWN complete.
+2022-07-13 10:59:33,985   STATE       STARTING emulator...
+2022-07-13 10:59:33,988   STATE       WAIT for readiness confirmation...
+2022-07-13 10:59:33,989   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 10:59:33,990   STATE       BOOTING...
+2022-07-13 10:59:33,990   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 10:59:33,992   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 10:59:33,993   STATE       OPENING connection for host...
+2022-07-13 10:59:33,993   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 10:59:33,998   STATE       OPENED connection for host.
+2022-07-13 10:59:33,998   STATE       READY to respond to requests.
+2022-07-13 10:59:34,404   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 10:59:34,405   DEBUG       Host address --> ('127.0.0.1', 54269).
+2022-07-13 10:59:34,405   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 10:59:34,406   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 10:59:34,406   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 10:59:34,406   STATE       COMMUNICATION CHECK request received...
+2022-07-13 10:59:34,406   STATE       FAILED to perform communication check!
+2022-07-13 10:59:34,408   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 10:59:34,408   STATE       COMMUNICATION CHECK completed.
+2022-07-13 10:59:34,408   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:59:34,408   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:59:34,408   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:59:34,409   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:59:34,409   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:59:34,410   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:59:34,410   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:59:34,411   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 10:59:34,411   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 10:59:34,411   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 10:59:44,417   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 10:59:44,418   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 10:59:44,418   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 10:59:44,418   STATE       SHUTTING DOWN emulator...
+2022-07-13 10:59:44,418   STATE       CLOSING connection to host...
+2022-07-13 10:59:44,418   STATE       CLOSED connection to host.
+2022-07-13 10:59:44,418   STATE       SHUT DOWN complete.
+2022-07-13 11:00:53,145   STATE       STARTING emulator...
+2022-07-13 11:00:53,147   STATE       WAIT for readiness confirmation...
+2022-07-13 11:00:53,147   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:00:53,148   STATE       BOOTING...
+2022-07-13 11:00:53,148   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:00:53,148   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:00:53,148   STATE       OPENING connection for host...
+2022-07-13 11:00:53,149   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:00:53,150   STATE       OPENED connection for host.
+2022-07-13 11:00:53,150   STATE       READY to respond to requests.
+2022-07-13 11:00:55,805   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:00:55,806   DEBUG       Host address --> ('127.0.0.1', 53816).
+2022-07-13 11:00:55,806   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 11:00:55,806   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:00:55,807   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:00:55,807   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:00:55,808   STATE       FAILED to perform communication check!
+2022-07-13 11:00:55,808   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:00:55,808   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:00:55,808   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:00:55,808   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:00:55,809   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:00:55,809   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:00:55,809   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:00:55,809   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:00:55,809   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:00:55,809   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:00:55,810   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:00:55,810   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:01:05,820   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:01:05,820   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:01:05,821   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:01:05,821   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:01:05,821   STATE       CLOSING connection to host...
+2022-07-13 11:01:05,821   STATE       CLOSED connection to host.
+2022-07-13 11:01:05,821   STATE       SHUT DOWN complete.
+2022-07-13 11:03:52,460   STATE       STARTING emulator...
+2022-07-13 11:03:52,462   STATE       WAIT for readiness confirmation...
+2022-07-13 11:03:52,462   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:03:52,463   STATE       BOOTING...
+2022-07-13 11:03:52,463   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:03:52,463   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:03:52,464   STATE       OPENING connection for host...
+2022-07-13 11:03:52,464   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:03:52,465   STATE       OPENED connection for host.
+2022-07-13 11:03:52,465   STATE       READY to respond to requests.
+2022-07-13 11:03:54,375   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:03:54,379   DEBUG       Host address --> ('127.0.0.1', 57553).
+2022-07-13 11:03:54,379   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 11:03:54,382   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:03:54,382   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:03:54,382   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:03:54,382   STATE       FAILED to perform communication check!
+2022-07-13 11:03:54,382   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:03:54,383   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:03:54,383   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:03:54,383   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:03:54,383   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:03:54,383   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:03:54,384   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:03:54,384   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:03:54,384   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:03:54,384   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:03:54,384   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:03:54,384   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:04:04,391   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:04:04,399   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:04:04,399   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:04:04,400   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:04:04,400   STATE       CLOSING connection to host...
+2022-07-13 11:04:04,400   STATE       CLOSED connection to host.
+2022-07-13 11:04:04,400   STATE       SHUT DOWN complete.
+2022-07-13 11:04:13,026   STATE       STARTING emulator...
+2022-07-13 11:04:13,026   STATE       WAIT for readiness confirmation...
+2022-07-13 11:04:13,026   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:04:13,027   STATE       BOOTING...
+2022-07-13 11:04:13,027   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:04:13,028   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:04:13,028   STATE       OPENING connection for host...
+2022-07-13 11:04:13,028   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:04:13,029   STATE       OPENED connection for host.
+2022-07-13 11:04:13,030   STATE       READY to respond to requests.
+2022-07-13 11:04:14,641   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:04:14,642   DEBUG       Host address --> ('127.0.0.1', 61159).
+2022-07-13 11:04:14,642   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 11:04:14,643   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:04:14,643   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:04:14,643   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:04:14,643   STATE       FAILED to perform communication check!
+2022-07-13 11:04:14,643   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:04:14,643   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:04:14,644   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:04:14,644   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:04:14,644   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:04:14,645   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:04:14,645   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:04:14,645   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:04:14,645   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:04:14,645   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:04:14,646   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:04:14,646   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:04:24,648   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:04:24,649   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:04:24,649   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:04:24,650   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:04:24,650   STATE       CLOSING connection to host...
+2022-07-13 11:04:24,650   STATE       CLOSED connection to host.
+2022-07-13 11:04:24,650   STATE       SHUT DOWN complete.
+2022-07-13 11:05:39,636   STATE       STARTING emulator...
+2022-07-13 11:05:39,638   STATE       WAIT for readiness confirmation...
+2022-07-13 11:05:39,638   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:05:39,639   STATE       BOOTING...
+2022-07-13 11:05:39,640   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:05:39,640   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:05:39,640   STATE       OPENING connection for host...
+2022-07-13 11:05:39,641   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:05:39,642   STATE       OPENED connection for host.
+2022-07-13 11:05:39,642   STATE       READY to respond to requests.
+2022-07-13 11:05:41,799   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:05:41,799   DEBUG       Host address --> ('127.0.0.1', 57676).
+2022-07-13 11:05:41,799   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 11:05:41,799   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:05:41,800   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:05:41,800   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:05:41,800   STATE       FAILED to perform communication check!
+2022-07-13 11:05:41,800   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:05:41,800   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:05:41,800   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:05:41,800   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:05:41,800   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:05:41,800   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:05:41,801   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:05:41,801   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:05:41,801   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:05:41,801   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:05:41,801   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:05:41,801   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:05:51,808   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:05:51,809   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:05:51,809   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:05:51,809   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:05:51,809   STATE       CLOSING connection to host...
+2022-07-13 11:05:51,809   STATE       CLOSED connection to host.
+2022-07-13 11:05:51,810   STATE       SHUT DOWN complete.
+2022-07-13 11:21:04,273   STATE       STARTING emulator...
+2022-07-13 11:21:04,276   STATE       WAIT for readiness confirmation...
+2022-07-13 11:21:04,276   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:21:04,278   STATE       BOOTING...
+2022-07-13 11:21:04,279   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:21:04,279   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:21:04,279   STATE       OPENING connection for host...
+2022-07-13 11:21:04,279   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:21:04,282   STATE       OPENED connection for host.
+2022-07-13 11:21:04,282   STATE       READY to respond to requests.
+2022-07-13 11:21:05,273   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:21:05,274   DEBUG       Host address --> ('127.0.0.1', 56911).
+2022-07-13 11:21:05,275   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 11:21:05,275   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:21:05,275   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:21:05,275   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:21:05,275   STATE       FAILED to perform communication check!
+2022-07-13 11:21:05,275   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:21:05,276   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:21:05,276   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:21:05,276   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:21:05,279   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:21:05,279   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:21:05,279   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:21:05,279   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:21:05,279   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:21:05,280   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:21:05,280   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:21:05,280   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:21:15,283   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:21:15,284   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:21:15,284   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:21:15,284   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:21:15,285   STATE       CLOSING connection to host...
+2022-07-13 11:21:15,286   STATE       CLOSED connection to host.
+2022-07-13 11:21:15,287   STATE       SHUT DOWN complete.
+2022-07-13 11:28:00,120   STATE       STARTING emulator...
+2022-07-13 11:28:00,122   STATE       WAIT for readiness confirmation...
+2022-07-13 11:28:00,123   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:28:00,124   STATE       BOOTING...
+2022-07-13 11:28:00,124   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:28:00,124   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:28:00,124   STATE       OPENING connection for host...
+2022-07-13 11:28:00,124   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:28:00,126   STATE       OPENED connection for host.
+2022-07-13 11:28:00,126   STATE       READY to respond to requests.
+2022-07-13 11:28:02,489   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:28:02,489   DEBUG       Host address --> ('127.0.0.1', 65481).
+2022-07-13 11:28:02,489   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 11:28:02,490   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:28:02,490   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:28:02,490   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:28:02,490   STATE       FAILED to perform communication check!
+2022-07-13 11:28:02,490   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:28:02,491   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:28:02,491   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:02,491   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:02,493   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:02,494   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:02,494   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:02,494   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:02,494   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:02,494   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:02,495   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:28:02,495   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:28:12,502   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:28:12,502   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:28:12,502   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:28:12,503   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:28:12,503   STATE       CLOSING connection to host...
+2022-07-13 11:28:12,503   STATE       CLOSED connection to host.
+2022-07-13 11:28:12,503   STATE       SHUT DOWN complete.
+2022-07-13 11:28:28,286   STATE       STARTING emulator...
+2022-07-13 11:28:28,287   STATE       WAIT for readiness confirmation...
+2022-07-13 11:28:28,288   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:28:28,289   STATE       BOOTING...
+2022-07-13 11:28:28,289   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:28:28,289   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:28:28,289   STATE       OPENING connection for host...
+2022-07-13 11:28:28,289   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:28:28,291   STATE       OPENED connection for host.
+2022-07-13 11:28:28,291   STATE       READY to respond to requests.
+2022-07-13 11:28:30,248   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:28:30,249   DEBUG       Host address --> ('127.0.0.1', 64316).
+2022-07-13 11:28:30,250   DEBUG       Decoding following message --> b'\xff\xfe'
+2022-07-13 11:28:30,250   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:28:30,250   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:28:30,250   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:28:30,250   STATE       FAILED to perform communication check!
+2022-07-13 11:28:30,250   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:28:30,250   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:28:30,250   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:30,255   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:30,255   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:30,256   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:30,256   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:30,256   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:30,256   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:30,257   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:28:30,258   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:28:30,258   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:28:40,263   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:28:40,263   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:28:40,264   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:28:40,264   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:28:40,264   STATE       CLOSING connection to host...
+2022-07-13 11:28:40,265   STATE       CLOSED connection to host.
+2022-07-13 11:28:40,265   STATE       SHUT DOWN complete.
+2022-07-13 11:30:07,487   STATE       STARTING emulator...
+2022-07-13 11:30:07,488   STATE       WAIT for readiness confirmation...
+2022-07-13 11:30:07,489   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:30:07,490   STATE       BOOTING...
+2022-07-13 11:30:07,490   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:30:07,490   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:30:07,490   STATE       OPENING connection for host...
+2022-07-13 11:30:07,490   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:30:07,496   STATE       OPENED connection for host.
+2022-07-13 11:30:07,496   STATE       READY to respond to requests.
+2022-07-13 11:30:10,731   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:30:10,731   DEBUG       Host address --> ('127.0.0.1', 57933).
+2022-07-13 11:30:10,731   DEBUG       Decoding following message --> b'\xff\xfe\x00\x01'
+2022-07-13 11:30:10,731   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:30:10,732   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:30:10,732   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:30:10,732   STATE       FAILED to perform communication check!
+2022-07-13 11:30:10,733   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:30:10,733   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:30:10,733   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:30:10,733   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:30:10,733   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:30:10,734   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:30:10,734   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:30:10,734   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:30:10,734   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:30:10,734   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:30:10,734   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:30:10,735   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:30:20,742   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:30:20,742   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:30:20,743   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:30:20,743   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:30:20,743   STATE       CLOSING connection to host...
+2022-07-13 11:30:20,744   STATE       CLOSED connection to host.
+2022-07-13 11:30:20,744   STATE       SHUT DOWN complete.
+2022-07-13 11:31:29,119   STATE       STARTING emulator...
+2022-07-13 11:31:29,120   STATE       WAIT for readiness confirmation...
+2022-07-13 11:31:29,121   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:31:29,121   STATE       BOOTING...
+2022-07-13 11:31:29,122   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:31:29,122   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:31:29,122   STATE       OPENING connection for host...
+2022-07-13 11:31:29,122   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:31:29,124   STATE       OPENED connection for host.
+2022-07-13 11:31:29,124   STATE       READY to respond to requests.
+2022-07-13 11:31:31,498   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:31:31,498   DEBUG       Host address --> ('127.0.0.1', 57910).
+2022-07-13 11:31:31,498   DEBUG       Decoding following message --> b'\xff\xfe\x00\x01'
+2022-07-13 11:31:31,499   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:31:31,499   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:31:31,499   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:31:31,499   STATE       FAILED to perform communication check!
+2022-07-13 11:31:31,499   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:31:31,499   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:31:31,499   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:31:31,500   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:31:31,500   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:31:31,500   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:31:31,500   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:31:31,500   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:31:31,500   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:31:31,500   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:31:31,502   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:31:31,502   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:31:41,507   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:31:41,508   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:31:41,508   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:31:41,508   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:31:41,509   STATE       CLOSING connection to host...
+2022-07-13 11:31:41,509   STATE       CLOSED connection to host.
+2022-07-13 11:31:41,509   STATE       SHUT DOWN complete.
+2022-07-13 11:32:26,389   STATE       STARTING emulator...
+2022-07-13 11:32:26,390   STATE       WAIT for readiness confirmation...
+2022-07-13 11:32:26,391   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:32:26,392   STATE       BOOTING...
+2022-07-13 11:32:26,392   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:32:26,393   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:32:26,393   STATE       OPENING connection for host...
+2022-07-13 11:32:26,393   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:32:26,395   STATE       OPENED connection for host.
+2022-07-13 11:32:26,395   STATE       READY to respond to requests.
+2022-07-13 11:32:26,699   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:32:26,700   DEBUG       Host address --> ('127.0.0.1', 50749).
+2022-07-13 11:32:26,700   DEBUG       Decoding following message --> b'\xff\xfe\x00\x01'
+2022-07-13 11:32:26,700   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:32:26,701   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:32:26,701   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:32:26,701   STATE       FAILED to perform communication check!
+2022-07-13 11:32:26,704   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:32:26,704   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:32:26,705   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:32:26,706   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:32:26,707   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:32:26,707   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:32:26,707   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:32:26,707   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:32:26,707   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:32:26,708   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:32:26,708   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:32:26,708   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:32:36,713   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:32:36,713   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:32:36,714   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:32:36,714   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:32:36,714   STATE       CLOSING connection to host...
+2022-07-13 11:32:36,715   STATE       CLOSED connection to host.
+2022-07-13 11:32:36,715   STATE       SHUT DOWN complete.
+2022-07-13 11:32:58,361   STATE       STARTING emulator...
+2022-07-13 11:32:58,362   STATE       WAIT for readiness confirmation...
+2022-07-13 11:32:58,362   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:32:58,363   STATE       BOOTING...
+2022-07-13 11:32:58,363   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:32:58,364   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:32:58,364   STATE       OPENING connection for host...
+2022-07-13 11:32:58,364   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:32:58,365   STATE       OPENED connection for host.
+2022-07-13 11:32:58,366   STATE       READY to respond to requests.
+2022-07-13 11:33:00,016   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:33:00,017   DEBUG       Host address --> ('127.0.0.1', 50725).
+2022-07-13 11:33:00,017   DEBUG       Decoding following message --> b'\xff\xfe\x00\x01'
+2022-07-13 11:33:00,018   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:33:00,018   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:33:00,018   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:33:00,018   STATE       FAILED to perform communication check!
+2022-07-13 11:33:00,018   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:33:00,019   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:33:00,019   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:33:00,019   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:33:00,019   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:33:00,020   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:33:00,020   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:33:00,020   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:33:00,020   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:33:00,020   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:33:00,020   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:33:00,021   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:33:10,022   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:33:10,022   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:33:10,023   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:33:10,023   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:33:10,024   STATE       CLOSING connection to host...
+2022-07-13 11:33:10,024   STATE       CLOSED connection to host.
+2022-07-13 11:33:10,024   STATE       SHUT DOWN complete.
+2022-07-13 11:43:09,755   STATE       STARTING emulator...
+2022-07-13 11:43:09,756   STATE       WAIT for readiness confirmation...
+2022-07-13 11:43:09,757   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:43:09,759   STATE       BOOTING...
+2022-07-13 11:43:09,760   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:43:09,760   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:43:09,760   STATE       OPENING connection for host...
+2022-07-13 11:43:09,762   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:43:09,763   STATE       OPENED connection for host.
+2022-07-13 11:43:09,764   STATE       READY to respond to requests.
+2022-07-13 11:43:10,204   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:43:10,204   DEBUG       Host address --> ('127.0.0.1', 57728).
+2022-07-13 11:43:10,204   DEBUG       Decoding following message --> b'\xff\xfe\x00\x01\x00'
+2022-07-13 11:43:10,205   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:43:10,205   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:43:10,205   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:43:10,205   STATE       FAILED to perform communication check!
+2022-07-13 11:43:10,205   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:43:10,206   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:43:10,206   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:43:10,206   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:43:10,206   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:43:10,206   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:43:10,206   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:43:10,207   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:43:10,207   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:43:10,207   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:43:10,207   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:43:10,207   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:43:20,214   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:43:20,215   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:43:20,215   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:43:20,215   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:43:20,215   STATE       CLOSING connection to host...
+2022-07-13 11:43:20,215   STATE       CLOSED connection to host.
+2022-07-13 11:43:20,216   STATE       SHUT DOWN complete.
+2022-07-13 11:44:29,032   STATE       STARTING emulator...
+2022-07-13 11:44:29,033   STATE       WAIT for readiness confirmation...
+2022-07-13 11:44:29,034   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:44:29,034   STATE       BOOTING...
+2022-07-13 11:44:29,035   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:44:29,035   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:44:29,036   STATE       OPENING connection for host...
+2022-07-13 11:44:29,041   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:44:29,042   STATE       OPENED connection for host.
+2022-07-13 11:44:29,042   STATE       READY to respond to requests.
+2022-07-13 11:44:31,230   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:44:31,230   DEBUG       Host address --> ('127.0.0.1', 49843).
+2022-07-13 11:44:31,231   DEBUG       Decoding following message --> b'\xff\xfe\x00\x10\x01'
+2022-07-13 11:44:31,231   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:44:31,231   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:44:31,232   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:44:31,232   STATE       FAILED to perform communication check!
+2022-07-13 11:44:31,232   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:44:31,233   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:44:31,233   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:44:31,233   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:44:31,233   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:44:31,233   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:44:31,233   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:44:31,233   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:44:31,234   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:44:31,234   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:44:31,234   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:44:31,236   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:44:41,239   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:44:41,240   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:44:41,240   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:44:41,240   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:44:41,240   STATE       CLOSING connection to host...
+2022-07-13 11:44:41,241   STATE       CLOSED connection to host.
+2022-07-13 11:44:41,241   STATE       SHUT DOWN complete.
+2022-07-13 11:46:17,460   STATE       STARTING emulator...
+2022-07-13 11:46:17,460   STATE       WAIT for readiness confirmation...
+2022-07-13 11:46:17,460   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:46:17,461   STATE       BOOTING...
+2022-07-13 11:46:17,461   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:46:17,462   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:46:17,462   STATE       OPENING connection for host...
+2022-07-13 11:46:17,462   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:46:17,463   STATE       OPENED connection for host.
+2022-07-13 11:46:17,463   STATE       READY to respond to requests.
+2022-07-13 11:46:19,758   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:46:19,758   DEBUG       Host address --> ('127.0.0.1', 52323).
+2022-07-13 11:46:19,758   DEBUG       Decoding following message --> b'\x00\x10\x01\x00'
+2022-07-13 11:46:19,758   ERROR       FATAL EXCEPTION ENCOUNTERED!
+Traceback (most recent call last):
+  File "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/src/emulator.py", line 1460, in main
+    emulator.listen_and_respond()
+  File "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/src/emulator.py", line 664, in listen_and_respond
+    request_name, request_payload, request_status = self.decode_msg(msg)
+  File "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/src/emulator.py", line 492, in decode_msg
+    raise NotImplementedError(f"Message's apparent type {msg_type} does not match any "
+NotImplementedError: Message's apparent type 16 does not match any known/implemented!
+2022-07-13 11:46:19,759   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-13 11:46:19,759   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:46:19,760   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:46:19,760   STATE       CLOSING connection to host...
+2022-07-13 11:46:19,760   STATE       CLOSED connection to host.
+2022-07-13 11:46:19,760   STATE       SHUT DOWN complete.
+2022-07-13 11:47:38,890   STATE       STARTING emulator...
+2022-07-13 11:47:38,891   STATE       WAIT for readiness confirmation...
+2022-07-13 11:47:38,892   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:47:38,893   STATE       BOOTING...
+2022-07-13 11:47:38,893   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:47:38,894   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:47:38,894   STATE       OPENING connection for host...
+2022-07-13 11:47:38,894   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:47:38,896   STATE       OPENED connection for host.
+2022-07-13 11:47:38,896   STATE       READY to respond to requests.
+2022-07-13 11:47:48,897   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:47:48,898   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-13 11:47:48,898   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:47:48,898   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:47:48,898   STATE       CLOSING connection to host...
+2022-07-13 11:47:48,898   STATE       CLOSED connection to host.
+2022-07-13 11:47:48,898   STATE       SHUT DOWN complete.
+2022-07-13 11:48:04,976   STATE       STARTING emulator...
+2022-07-13 11:48:04,976   STATE       WAIT for readiness confirmation...
+2022-07-13 11:48:04,976   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:48:04,977   STATE       BOOTING...
+2022-07-13 11:48:04,978   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:48:04,978   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:48:04,978   STATE       OPENING connection for host...
+2022-07-13 11:48:04,979   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:48:04,980   STATE       OPENED connection for host.
+2022-07-13 11:48:04,981   STATE       READY to respond to requests.
+2022-07-13 11:48:07,827   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:48:07,827   DEBUG       Host address --> ('127.0.0.1', 56669).
+2022-07-13 11:48:07,828   DEBUG       Decoding following message --> b'\x01\x01'
+2022-07-13 11:48:07,828   ERROR       FATAL EXCEPTION ENCOUNTERED!
+Traceback (most recent call last):
+  File "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/src/emulator.py", line 1460, in main
+    emulator.listen_and_respond()
+  File "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/src/emulator.py", line 664, in listen_and_respond
+    request_name, request_payload, request_status = self.decode_msg(msg)
+  File "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/src/emulator.py", line 492, in decode_msg
+    raise NotImplementedError(f"Message's apparent type {msg_type} does not match any "
+NotImplementedError: Message's apparent type 257 does not match any known/implemented!
+2022-07-13 11:48:07,829   REFERENCE   Messages, as identified by message ID, were sent in following order --> []
+2022-07-13 11:48:07,829   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:48:07,829   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:48:07,829   STATE       CLOSING connection to host...
+2022-07-13 11:48:07,830   STATE       CLOSED connection to host.
+2022-07-13 11:48:07,830   STATE       SHUT DOWN complete.
+2022-07-13 11:48:43,614   STATE       STARTING emulator...
+2022-07-13 11:48:43,615   STATE       WAIT for readiness confirmation...
+2022-07-13 11:48:43,615   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:48:43,616   STATE       BOOTING...
+2022-07-13 11:48:43,616   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:48:43,616   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:48:43,617   STATE       OPENING connection for host...
+2022-07-13 11:48:43,617   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:48:43,619   STATE       OPENED connection for host.
+2022-07-13 11:48:43,619   STATE       READY to respond to requests.
+2022-07-13 11:48:45,642   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:48:45,642   DEBUG       Host address --> ('127.0.0.1', 50566).
+2022-07-13 11:48:45,643   DEBUG       Decoding following message --> b'\x10\x01'
+2022-07-13 11:48:45,643   INFO        RECEIVE MESSAGE #1 --> MRM_SET_CONFIG_REQUEST.
+2022-07-13 11:48:45,643   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('node_id', None), ('scan_start', None), ('scan_stop', None), ('scan_res', None), ('pii', None), ('seg_1_samp', None), ('seg_2_samp', None), ('seg_3_samp', None), ('seg_4_samp', None), ('seg_1_int', None), ('seg_2_int', None), ('seg_3_int', None), ('seg_4_int', None), ('ant_mode', None), ('tx_gain_ind', None), ('code_channel', None), ('persist_flag', None)])
+2022-07-13 11:48:45,643   STATE       CONFIGURATION SET request received...
+2022-07-13 11:48:45,643   STATE       FAILED to set configuration!
+2022-07-13 11:48:45,644   DEBUG       MRM_SET_CONFIG_REQUEST has non-successful status 5; no configuration will be set.
+2022-07-13 11:48:45,644   STATE       CONFIGURATION SET.
+2022-07-13 11:48:45,644   DEBUG       Packet field 'message_id' of message MRM_SET_CONFIG_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:48:45,644   INFO        SEND MESSAGE #1 --> MRM_SET_CONFIG_CONFIRM.
+2022-07-13 11:48:45,644   DEBUG       Encoded payload --> OrderedDict([('message_type', 4353), ('message_id', 0), ('status', 5)])
+2022-07-13 11:48:55,651   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:48:55,656   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:48:55,656   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:48:55,657   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:48:55,657   STATE       CLOSING connection to host...
+2022-07-13 11:48:55,658   STATE       CLOSED connection to host.
+2022-07-13 11:48:55,658   STATE       SHUT DOWN complete.
+2022-07-13 11:55:06,319   STATE       STARTING emulator...
+2022-07-13 11:55:06,321   STATE       WAIT for readiness confirmation...
+2022-07-13 11:55:06,321   DEBUG       Arguments --> Namespace(op_mode='develop', data_mode='ramp', offline_data='', scatterers='scatterers.yml', mission='mission.yml', timeout=10, ip='localhost', port=21210, add_noise=False, noise_mag=32, prop_loss=False, beam_rolloff=False, bit_prob=0.1, drop_prob=0.01, order_prob=0.01)
+2022-07-13 11:55:06,322   STATE       BOOTING...
+2022-07-13 11:55:06,322   DEBUG       Making emulator output directory '/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output' if needed.
+2022-07-13 11:55:06,323   STATE       BOOTED in 'develop' operational mode.
+2022-07-13 11:55:06,323   STATE       OPENING connection for host...
+2022-07-13 11:55:06,324   DEBUG       Emulator address --> ('localhost', 21210).
+2022-07-13 11:55:06,327   STATE       OPENED connection for host.
+2022-07-13 11:55:06,327   STATE       READY to respond to requests.
+2022-07-13 11:55:08,139   DEBUG       RECEIVED data; attempting to decode...
+2022-07-13 11:55:08,139   DEBUG       Host address --> ('127.0.0.1', 60042).
+2022-07-13 11:55:08,140   DEBUG       Decoding following message --> b'\xff\xfe\x10\x11\x10\x10\x10\x10\x10\x10\x10\x01'
+2022-07-13 11:55:08,140   INFO        RECEIVE MESSAGE #1 --> MRM_COMM_CHECK_REQUEST.
+2022-07-13 11:55:08,140   DEBUG       Decoded payload --> OrderedDict([('message_type', None), ('message_id', None), ('uint8_val', None), ('uint16_val', None), ('uint32_val', None), ('int8_val', None), ('int16_val', None), ('int32_val', None)])
+2022-07-13 11:55:08,140   STATE       COMMUNICATION CHECK request received...
+2022-07-13 11:55:08,140   STATE       FAILED to perform communication check!
+2022-07-13 11:55:08,140   DEBUG       MRM_COMM_CHECK_REQUEST has non-successful status 5; no communication check will be performed.
+2022-07-13 11:55:08,140   STATE       COMMUNICATION CHECK completed.
+2022-07-13 11:55:08,141   DEBUG       Packet field 'message_id' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:55:08,141   DEBUG       Packet field 'uint8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:55:08,141   DEBUG       Packet field 'uint16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:55:08,141   DEBUG       Packet field 'uint32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:55:08,141   DEBUG       Packet field 'int8_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:55:08,142   DEBUG       Packet field 'int16_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:55:08,142   DEBUG       Packet field 'int32_val' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:55:08,142   DEBUG       Packet field 'datetime_str' of message MRM_COMM_CHECK_CONFIRM has no value specified; will default to 0.
+2022-07-13 11:55:08,142   INFO        SEND MESSAGE #1 --> MRM_COMM_CHECK_CONFIRM.
+2022-07-13 11:55:08,142   DEBUG       Encoded payload --> OrderedDict([('message_type', 65535), ('message_id', 0), ('uint8_val', 0), ('uint16_val', 0), ('uint32_val', 0), ('int8_val', 0), ('int16_val', 0), ('int32_val', 0), ('datetime_str', [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]), ('status', 5)])
+2022-07-13 11:55:18,146   STATE       TIMED OUT; emulator idle timeout of 10 seconds exceeded; emulator will shut down.
+2022-07-13 11:55:18,147   REFERENCE   Messages, as identified by message ID, were sent in following order --> [0]
+2022-07-13 11:55:18,147   REFERENCE   Following messages, as identified by message ID, were dropped --> []
+2022-07-13 11:55:18,147   STATE       SHUTTING DOWN emulator...
+2022-07-13 11:55:18,147   STATE       CLOSING connection to host...
+2022-07-13 11:55:18,148   STATE       CLOSED connection to host.
+2022-07-13 11:55:18,148   STATE       SHUT DOWN complete.
