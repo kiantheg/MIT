@@ -19,18 +19,16 @@ server_address = ("127.0.0.1", port)
 s.connect(server_address)
 
 
-hex_string = "FFFE" + int.to_bytes(counter, 2, 'big')
+hex_string = "FFFE"
 counter += 1
 
-b = bytes.fromhex(hex_string)
+b = bytes.fromhex(hex_string) + int.to_bytes(counter, 2, 'big')
 for i in range(3):
     b = b + int.to_bytes(i+1,2**i,'big')
 for i in range(3):
     b = b + int.to_bytes(-i-1,2**i,'big',signed=True)
 print(b)
 s.sendall(b)
-
-
 
 #Error Code Reader
 def errorCode(code):
@@ -61,6 +59,7 @@ def connectionStatus(code):
         print("General Error")
     else:
         print("MRM already in use")
+
 #1101
 def setConfigConfirm(data, m):
     m['Status'] = int.from_bytes(data[4:8],'big')
@@ -108,6 +107,28 @@ def decodeGetFilterConfig(data, m):
     m['status'] = int.from_bytes(data[8:12],'big')
     errorCode(m["Status"]) 
 
+#F101
+def mrm_get_statusinfo_confirm(data, m):
+    m['MRM Version Major'] = int.from_bytes(data[4:5],'little')
+    m['MRM Version Minor'] = int.from_bytes(data[5:6],'little')
+    m['MRM Version Build'] = int.from_bytes(data[6:8],'little')
+    m['UWB Kernel Major'] = int.from_bytes(data[8:9],'little')
+    m['UWB Kernel Minor'] = int.from_bytes(data[9:10],'little')
+    m['UWB Kernel Built'] = int.from_bytes(data[10:12],'little')
+    m['FPGA Firmware Version'] = int.from_bytes(data[12:13],'little')
+    m['FPGA Firmware Year'] = int.from_bytes(data[13:14],'little')
+    m['FPGA Firmware Month'] = int.from_bytes(data[14:15],'little')
+    m['FPGA Firmware Day'] = int.from_bytes(data[15:16],'little')
+    m['Serial Number'] = int.from_bytes(data[16:22],'little')
+    m['Board Version'] = int.from_bytes(data[22:23],'little')
+    m['Power-On Bit Test Result'] = int.from_bytes(data[23:24],'little')
+    m['Board Type'] = int.from_bytes(data[24:25],'little')
+    m['Transmitter Configuration'] = int.from_bytes(data[25:26],'little')
+    m['Temperature'] = int.from_bytes(data[26:30],'little')
+    m['Package Version'] = int.from_bytes(data[30:62],'little')
+    m['Status'] = int.from_bytes(data[62:66], 'little')
+    errorCode(m['Status'])
+
 #F103
 def decodeOpMode(data, m):
     m['operational mode'] = int.from_bytes(data[4:8], 'big')
@@ -137,6 +158,7 @@ def decodeCommComfirm(data, m):
     m['status'] = int.from_bytes(data[33:37],'big')
     errorCode(m['status'])
 
+#mainDecoder
 def decodeMessage(data):
     m = OrderedDict()
     m['message_type'] = int.from_bytes(data[0:2],'big')
@@ -169,4 +191,7 @@ def decodeMessage(data):
 data, address = s.recvfrom(4096)
 message = decodeMessage(data)
 logger.info(message)
+def encodeSetConf():
+    message = bytes.fromhex("1001") + int.to_bytes(counter, 2, 'big')
+    counter += 1
 s.close()
