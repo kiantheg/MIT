@@ -22,6 +22,7 @@ s.connect(server_address)
 
 #Error Code Reader
 def errorCode(code):
+    ##print(messageID)
     if(code == 0):
         print("Success")
     elif(code == 1):
@@ -42,7 +43,7 @@ def errorCode(code):
         print("Unrecognized Message Type")
 
 #connection status reader
-def connectionStatus(code):
+def connectionstatus(code):
     if (code==0):
         print("Successful")
     elif (code==1):
@@ -52,8 +53,8 @@ def connectionStatus(code):
 
 #1101
 def setConfigConfirm(data, m):
-    m['Status'] = int.from_bytes(data[4:8],'big')
-    errorCode(m["Status"])
+    m['status'] = int.from_bytes(data[4:8],'big')
+    errorCode(m["status"])
 
 #1102
 def decodeGetConfig(data, m):
@@ -72,22 +73,22 @@ def decodeGetConfig(data, m):
 #1103
 def decodeCtrlConfirm(data, m):
     m['status'] = int.from_bytes(data[4:8], 'big')
-    errorCode(m["Status"])
+    errorCode(m["status"])
 
 #1104
 def decodeServerConnect(data, m):
     m['connection status'] = int.from_bytes(data[4:8], 'big')
-    connectionStatus(m["connection status"])
+    connectionstatus(m["connection status"])
 
 #1105
 def MRMServerDisConfirm(data, m):
-    m['Status'] = int.from_bytes(data[4:8],'big')
-    errorCode(m["Status"])
+    m['status'] = int.from_bytes(data[4:8],'big')
+    errorCode(m["status"])
 
 #1106
 def setFilterConfig(data, m):
-    m['Status'] = int.from_bytes(data[4:8],'big')
-    errorCode(m["Status"])
+    m['status'] = int.from_bytes(data[4:8],'big')
+    errorCode(m["status"])
 
 #1107
 def decodeGetFilterConfig(data, m):
@@ -95,7 +96,7 @@ def decodeGetFilterConfig(data, m):
     m['motion_filter_index'] = int.from_bytes(data[6:7],'big')
     m['reserved'] = int.from_bytes(data[7:8],'big')
     m['status'] = int.from_bytes(data[8:12],'big')
-    errorCode(m["Status"])
+    errorCode(m["status"])
 
 #F101
 def mrm_get_statusinfo_confirm(data, m):
@@ -116,25 +117,25 @@ def mrm_get_statusinfo_confirm(data, m):
     m['Transmitter Configuration'] = int.from_bytes(data[25:26],'little')
     m['Temperature'] = int.from_bytes(data[26:30],'little')
     m['Package Version'] = int.from_bytes(data[30:62],'little')
-    m['Status'] = int.from_bytes(data[62:66], 'little')
-    errorCode(m['Status'])
+    m['status'] = int.from_bytes(data[62:66], 'little')
+    errorCode(m['status'])
 
 #F103
 def decodeOpMode(data, m):
     m['operational mode'] = int.from_bytes(data[4:8], 'big')
     m['status'] = int.from_bytes(data[8:12], 'big')
-    errorCode(m["Status"])
+    errorCode(m["status"])
 
 #F105
 def decodeSetSleepmode(data, m):
     m['status'] = int.from_bytes(data[4:8],'big')
-    errorCode(m["Status"])
+    errorCode(m["status"])
 
 #F106
 def decodeGetSleepmode(data, m):
     m['sleep_mode'] = int.from_bytes(data[4:8],'big')
     m['status'] = int.from_bytes(data[8:12],'big')
-    errorCode(m["Status"])
+    errorCode(m["status"])
 
 #FFFF
 def decodeCommComfirm(data, m):
@@ -178,13 +179,13 @@ def decodeMessage(data):
     return m
 
 def encodeCommConf(messageID):
-    b = bytes.fromhex("FFFE") + int.to_bytes(messageID, 2, 'big')
+    message = bytes.fromhex("FFFE") + int.to_bytes(messageID, 2, 'big')
     for i in range(3):
-        b = b + int.to_bytes(i+1,2**i,'big')
+        message = message + int.to_bytes(i+1,2**i,'big')
     for i in range(3):
-        b = b + int.to_bytes(-i-1,2**i,'big',signed=True)
-    print(b)
-    s.sendall(b)
+        message = message + int.to_bytes(-i-1,2**i,'big',signed=True)
+    #print(b)
+    return message
 
 def encodeSetConf(messageID):
     message = bytes.fromhex("1001") + int.to_bytes(messageID, 2, 'big')
@@ -210,15 +211,29 @@ def encodeSetConf(messageID):
     message = message + int.to_bytes(tx_gain_ind, 1, 'big')
     message = message + int.to_bytes(codeChannel, 1, 'big')
     message = message + int.to_bytes(persistFlag, 1, 'big')
-    s.sendall(message) #1001
+    return message #1001
 
 def encodeGetConf(messageID): #1002
     message = bytes.fromhex("1002") + int.to_bytes(messageID, 2, 'big')
-    s.sendall(message)
+    return message
+
+
+def encodeServerConnect(messageID):
+    message = bytes.fromhex('1004') + int.to_bytes(messageID, 2, 'big')
+    MRMIPAddress = "127.0.0.1"
+    MRMIAddress = MRMIPAddress.split(".")
+    for item in MRMIAddress:
+        message = message + bytes(item, 'utf-16')
+    MRMIPPort = 21210
+    reserved = 0
+    ##message = message + bytes(MRMIPAddress, 'utf-16')
+    message = message + int.to_bytes(MRMIPPort, 2, 'big')
+    message = message + int.to_bytes(reserved, 2, 'big')
+    return message
 
 def encodeServerDisconnect(messageID):
     message = bytes.fromhex("1005") + int.to_bytes(messageID, 2, 'big')
-    s.sendall(message)
+    return message
 
 def encodeCtrlReq(messageID): #1003
     message = bytes.fromhex('1003') + int.to_bytes(messageID, 2, 'big')
@@ -228,32 +243,36 @@ def encodeCtrlReq(messageID): #1003
     message = message + int.to_bytes(scanCount, 2, 'big')
     message = message + int.to_bytes(reserved, 2, 'big')
     message = message + int.to_bytes(scanIntTime, 4, 'big')
+    return message
+    
 
-def send_receive():
+def send_receive(message):
+    s.sendall(message)
     data, address = s.recvfrom(4096)
     message = decodeMessage(data)
     logger.info(message)
 
-encodeCommConf(messageID)
+
+send_receive(encodeCommConf(messageID))
 messageID += 1
-send_receive()
 
-encodeSetConf(messageID)
+
+send_receive(encodeSetConf(messageID))
 messageID += 1
-send_receive()
 
-encodeGetConf(messageID)
+
+send_receive(encodeGetConf(messageID))
 messageID += 1
-send_receive()
 
-encodeCtrlReq(messageID)
+
+send_receive(encodeCtrlReq(messageID))
 messageID += 1
-send_receive()
 
-'''encodeServerDisconnect(messageID)
+'''
+send_receive(encodeServerConnect(messageID))
 messageID += 1
-send_receive()'''
 
-
+send_receive(encodeServerDisconnect(messageID))
+'''
 
 s.close()
