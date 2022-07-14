@@ -3,8 +3,7 @@ import logging
 from collections import OrderedDict
 
 #sets up message ID counter
-global messageID
-messageID =  0 
+messageID = 0
 
 #sets up logger
 logger = logging.getLogger(__name__)
@@ -178,9 +177,8 @@ def decodeMessage(data):
         decodeGetSleepmode(data, m)
     return m
 
-def encodeCommConf():
+def encodeCommConf(messageID):
     b = bytes.fromhex("FFFE") + int.to_bytes(messageID, 2, 'big')
-    messageID += 1
     for i in range(3):
         b = b + int.to_bytes(i+1,2**i,'big')
     for i in range(3):
@@ -188,12 +186,39 @@ def encodeCommConf():
     print(b)
     s.sendall(b)
 
-def encodeSetConf():
+def encodeSetConf(messageID):
     message = bytes.fromhex("1001") + int.to_bytes(messageID, 2, 'big')
-    messageID += 1
+    node_id = 1
+    scanStart = 0 #+/-499,998 ps
+    scanEnd = 200000 #+/-499,998 ps
+    scan_res = 32 #1-511
+    baseInter = 6 #6-15
+    message = message + int.to_bytes(node_id, 4, 'big')
+    message = message + int.to_bytes(scanStart, 4, 'big', signed = True)
+    message = message + int.to_bytes(scanEnd, 4, 'big', signed = True)
+    message = message + int.to_bytes(scan_res, 2, 'big')
+    message = message + int.to_bytes(baseInter, 2, 'big')
+    for i in range(4):
+        message = message + int.to_bytes(0, 2, 'big')
+    for i in range(4):
+        message = message + int.to_bytes(0, 1, 'big')
+    ant_mode = 3 #2: B->A 3: A->B
+    tx_gain_ind = 32 #0-63
+    codeChannel = 7 #0-10
+    persistFlag = 0 #0 - not persist 1 - will persist
+    message = message + int.to_bytes(ant_mode, 1, 'big')
+    message = message + int.to_bytes(tx_gain_ind, 1, 'big')
+    message = message + int.to_bytes(codeChannel, 1, 'big')
+    message = message + int.to_bytes(persistFlag, 1, 'big')
     s.sendall(message)
 
-encodeCommConf()
+encodeCommConf(messageID)
+messageID += 1
+data, address = s.recvfrom(4096)
+message = decodeMessage(data)
+logger.info(message)
+encodeSetConf(messageID)
+messageID += 1
 data, address = s.recvfrom(4096)
 message = decodeMessage(data)
 logger.info(message)
