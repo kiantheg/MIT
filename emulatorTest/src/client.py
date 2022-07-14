@@ -2,9 +2,11 @@ import socket
 import logging
 from collections import OrderedDict
 
-global counter
-counter =  0 
+#sets up message ID counter
+global messageID
+messageID =  0 
 
+#sets up logger
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 handler = logging.StreamHandler()
@@ -13,22 +15,11 @@ formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
+#sets up socket connection
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 port = 21210
 server_address = ("127.0.0.1", port)
 s.connect(server_address)
-
-
-hex_string = "FFFE"
-counter += 1
-
-b = bytes.fromhex(hex_string) + int.to_bytes(counter, 2, 'big')
-for i in range(3):
-    b = b + int.to_bytes(i+1,2**i,'big')
-for i in range(3):
-    b = b + int.to_bytes(-i-1,2**i,'big',signed=True)
-print(b)
-s.sendall(b)
 
 #Error Code Reader
 def errorCode(code):
@@ -187,11 +178,24 @@ def decodeMessage(data):
         decodeGetSleepmode(data, m)
     return m
 
+def encodeCommConf():
+    b = bytes.fromhex("FFFE") + int.to_bytes(messageID, 2, 'big')
+    messageID += 1
+    for i in range(3):
+        b = b + int.to_bytes(i+1,2**i,'big')
+    for i in range(3):
+        b = b + int.to_bytes(-i-1,2**i,'big',signed=True)
+    print(b)
+    s.sendall(b)
 
+def encodeSetConf():
+    message = bytes.fromhex("1001") + int.to_bytes(messageID, 2, 'big')
+    messageID += 1
+    s.sendall(message)
+
+encodeCommConf()
 data, address = s.recvfrom(4096)
 message = decodeMessage(data)
 logger.info(message)
-def encodeSetConf():
-    message = bytes.fromhex("1001") + int.to_bytes(counter, 2, 'big')
-    counter += 1
+
 s.close()
