@@ -68,11 +68,11 @@ def decodeGetConfig(data, m):
     m['persist_flag'] = int.from_bytes(data[23:24],'big')
     m['timestamp'] = int.from_bytes(data[24:28],'big')
     m['status'] = int.from_bytes(data[28:32],'big')
-    
+
 #1103
 def decodeCtrlConfirm(data, m):
     m['status'] = int.from_bytes(data[4:8], 'big')
-    errorCode(m["Status"])  
+    errorCode(m["Status"])
 
 #1104
 def decodeServerConnect(data, m):
@@ -82,12 +82,12 @@ def decodeServerConnect(data, m):
 #1105
 def MRMServerDisConfirm(data, m):
     m['Status'] = int.from_bytes(data[4:8],'big')
-    errorCode(m["Status"])   
+    errorCode(m["Status"])
 
 #1106
 def setFilterConfig(data, m):
     m['Status'] = int.from_bytes(data[4:8],'big')
-    errorCode(m["Status"]) 
+    errorCode(m["Status"])
 
 #1107
 def decodeGetFilterConfig(data, m):
@@ -95,7 +95,7 @@ def decodeGetFilterConfig(data, m):
     m['motion_filter_index'] = int.from_bytes(data[6:7],'big')
     m['reserved'] = int.from_bytes(data[7:8],'big')
     m['status'] = int.from_bytes(data[8:12],'big')
-    errorCode(m["Status"]) 
+    errorCode(m["Status"])
 
 #F101
 def mrm_get_statusinfo_confirm(data, m):
@@ -210,7 +210,24 @@ def encodeSetConf(messageID):
     message = message + int.to_bytes(tx_gain_ind, 1, 'big')
     message = message + int.to_bytes(codeChannel, 1, 'big')
     message = message + int.to_bytes(persistFlag, 1, 'big')
+    s.sendall(message) #1001
+
+def encodeGetConf(messageID): #1002
+    message = bytes.fromhex("1002") + int.to_bytes(messageID, 2, 'big')
     s.sendall(message)
+
+def encodeServerDisconnect(messageID):
+    message = bytes.fromhex("1005") + int.to_bytes(messageID, 2, 'big')
+    s.sendall(message)
+
+def encodeCtrlReq(messageID): #1003
+    message = bytes.fromhex('1003') + int.to_bytes(messageID, 2, 'big')
+    scanCount = 6
+    reserved = 0
+    scanIntTime = 0
+    message = message + int.to_bytes(scanCount, 2, 'big')
+    message = message + int.to_bytes(reserved, 2, 'big')
+    message = message + int.to_bytes(scanIntTime, 4, 'big')
 
 def send_receive():
     data, address = s.recvfrom(4096)
@@ -220,8 +237,23 @@ def send_receive():
 encodeCommConf(messageID)
 messageID += 1
 send_receive()
+
 encodeSetConf(messageID)
 messageID += 1
 send_receive()
+
+encodeGetConf(messageID)
+messageID += 1
+send_receive()
+
+encodeCtrlReq(messageID)
+messageID += 1
+send_receive()
+
+'''encodeServerDisconnect(messageID)
+messageID += 1
+send_receive()'''
+
+
 
 s.close()
