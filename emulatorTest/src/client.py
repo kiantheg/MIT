@@ -150,7 +150,10 @@ def decodeCommComfirm(data, m):
     errorCode(m['status'])
 
 #F201
-def decodeScan(data, m):
+def decodeScan(data):
+    m = OrderedDict()
+    m['message_type'] = int.from_bytes(data[0:2],'big')
+    m['message_id'] = int.from_bytes(data[2:4],'big')
     m['source_id'] = int.from_bytes(data[4:8],'big')
     m['timestamp'] = int.from_bytes(data[8:12],'big')
     m['scan_start'] = int.from_bytes(data[28:32],'big', signed=True)
@@ -167,6 +170,7 @@ def decodeScan(data, m):
     #could improve
     for i in range(m['num_samples_message']):
         m['scan_data'].append(int.from_bytes(data[52+(i*4):56+(i*4)],'big', signed=True))
+    return m
 
     
 
@@ -304,7 +308,7 @@ send_receive(encodeCtrlReq())
 
 
 data, address = s.recvfrom(4096)
-message = decodeMessage(data)
+message = decodeScan(data)
 logger.info(message)
 
 
