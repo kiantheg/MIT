@@ -212,15 +212,16 @@ def encodeSetConf(messageID):
     message = message + int.to_bytes(persistFlag, 1, 'big')
     s.sendall(message)
 
+def send_receive():
+    data, address = s.recvfrom(4096)
+    message = decodeMessage(data)
+    logger.info(message)
+
 encodeCommConf(messageID)
 messageID += 1
-data, address = s.recvfrom(4096)
-message = decodeMessage(data)
-logger.info(message)
+send_receive()
 encodeSetConf(messageID)
 messageID += 1
-data, address = s.recvfrom(4096)
-message = decodeMessage(data)
-logger.info(message)
+send_receive()
 
 s.close()
