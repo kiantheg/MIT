@@ -149,6 +149,7 @@ def decodeCommComfirm(data, m):
     m['status'] = int.from_bytes(data[33:37],'big')
     errorCode(m['status'])
 
+#F201
 def decodeScan(data, m):
     m['source_id'] = int.from_bytes(data[4:8],'big')
     m['timestamp'] = int.from_bytes(data[8:12],'big')
@@ -162,8 +163,12 @@ def decodeScan(data, m):
     m['num_samples_total'] = int.from_bytes(data[44:48],'big')
     m['message_index'] = int.from_bytes(data[48:50],'big')
     m['num_messages_total'] = int.from_bytes(data[50:52],'big')
-    m['scan_data'] = int.from_bytes(data[52:56],'big', signed=True)
-    print(m['scan_data'])
+    m['scan_data'] = []
+    #could improve
+    for i in range(m['num_samples_message']):
+        m['scan_data'].append(int.from_bytes(data[52+(i*4):56+(i*4)],'big', signed=True))
+
+    
 
 #mainDecoder
 def decodeMessage(data):
@@ -196,8 +201,11 @@ def decodeMessage(data):
         decodeScan(data, m)
     return m
 
-def encodeCommConf(messageID):
+#FFFE
+def encodeCommConf():
+    global messageID
     message = bytes.fromhex("FFFE") + int.to_bytes(messageID, 2, 'big')
+    messageID += 1
     for i in range(3):
         message = message + int.to_bytes(i+1,2**i,'big')
     for i in range(3):
@@ -205,8 +213,11 @@ def encodeCommConf(messageID):
     #print(b)
     return message
 
-def encodeSetConf(messageID):
+#1001
+def encodeSetConf():
+    global messageID
     message = bytes.fromhex("1001") + int.to_bytes(messageID, 2, 'big')
+    messageID += 1
     node_id = 1
     scanStart = 0 #+/-499,998 ps
     scanEnd = 100000 #+/-499,998 ps
@@ -231,13 +242,17 @@ def encodeSetConf(messageID):
     message = message + int.to_bytes(persistFlag, 1, 'big')
     return message #1001
 
-def encodeGetConf(messageID): #1002
+#1002
+def encodeGetConf():
+    global messageID
     message = bytes.fromhex("1002") + int.to_bytes(messageID, 2, 'big')
+    messageID += 1
     return message
 
-
-def encodeServerConnect(messageID):
+def encodeServerConnect():
+    global messageID
     message = bytes.fromhex('1004') + int.to_bytes(messageID, 2, 'big')
+    messageID += 1
     MRMIPAddress = "127.0.0.1"
     MRMIAddress = MRMIPAddress.split(".")
     for item in MRMIAddress:
@@ -249,13 +264,18 @@ def encodeServerConnect(messageID):
     message = message + int.to_bytes(reserved, 2, 'big')
     return message
 
-def encodeServerDisconnect(messageID):
+def encodeServerDisconnect():
+    global messageID
     message = bytes.fromhex("1005") + int.to_bytes(messageID, 2, 'big')
+    messageID += 1
     return message
 
-def encodeCtrlReq(messageID): #1003
+#1003
+def encodeCtrlReq(): 
+    global messageID
     message = bytes.fromhex('1003') + int.to_bytes(messageID, 2, 'big')
-    scanCount = 6
+    messageID += 1
+    scanCount = 1
     reserved = 0
     scanIntTime = 0
     message = message + int.to_bytes(scanCount, 2, 'big')
@@ -271,22 +291,24 @@ def send_receive(message):
     logger.info(message)
 
 
-send_receive(encodeCommConf(messageID))
-messageID += 1
+send_receive(encodeCommConf())
 
 
-send_receive(encodeSetConf(messageID))
-messageID += 1
+send_receive(encodeSetConf())
 
 
-send_receive(encodeGetConf(messageID))
-messageID += 1
+send_receive(encodeGetConf())
 
 
-send_receive(encodeCtrlReq(messageID))
-messageID += 1
+send_receive(encodeCtrlReq())
 
 
+data, address = s.recvfrom(4096)
+message = decodeMessage(data)
+logger.info(message)
+
+
+'''
 data, address = s.recvfrom(4096)
 message = decodeMessage(data)
 logger.info(message)
@@ -294,10 +316,9 @@ logger.info(message)
 data, address = s.recvfrom(4096)
 message = decodeMessage(data)
 logger.info(message)
+'''
 
-data, address = s.recvfrom(4096)
-message = decodeMessage(data)
-logger.info(message)
+
 
 '''
 send_receive(encodeServerConnect(messageID))
