@@ -172,10 +172,10 @@ def decodeScan(data):
         m['scan_data'].append(int.from_bytes(data[52+(i*4):56+(i*4)],'big', signed=True))
     return m
 
-    
 
 #mainDecoder
 def decodeMessage(data):
+    global m
     m = OrderedDict()
     m['message_type'] = int.from_bytes(data[0:2],'big')
     m['message_id'] = int.from_bytes(data[2:4],'big')
@@ -224,7 +224,7 @@ def encodeSetConf():
     messageID += 1
     node_id = 1
     scanStart = 0 #+/-499,998 ps
-    scanEnd = 100000 #+/-499,998 ps
+    scanEnd = 200000 #+/-499,998 ps
     scan_res = 32 #1-511
     baseInter = 6 #6-15
     message = message + int.to_bytes(node_id, 4, 'big')
@@ -310,25 +310,13 @@ send_receive(encodeCtrlReq())
 data, address = s.recvfrom(4096)
 message = decodeScan(data)
 logger.info(message)
+numtotal = m['num_messages_total']
 
 
-'''
-data, address = s.recvfrom(4096)
-message = decodeMessage(data)
-logger.info(message)
+for i in range(numtotal-1):
+    data, address = s.recvfrom(4096)
+    message = decodeMessage(data)
+    logger.info(message)
 
-data, address = s.recvfrom(4096)
-message = decodeMessage(data)
-logger.info(message)
-'''
-
-
-
-'''
-send_receive(encodeServerConnect(messageID))
-messageID += 1
-
-send_receive(encodeServerDisconnect(messageID))
-'''
 
 s.close()
