@@ -149,6 +149,22 @@ def decodeCommComfirm(data, m):
     m['status'] = int.from_bytes(data[33:37],'big')
     errorCode(m['status'])
 
+def decodeScan(data, m):
+    m['source_id'] = int.from_bytes(data[4:8],'big')
+    m['timestamp'] = int.from_bytes(data[8:12],'big')
+    m['scan_start'] = int.from_bytes(data[28:32],'big', signed=True)
+    m['scan_stop'] = int.from_bytes(data[32:36],'big',signed=True)
+    m['scan_step'] = int.from_bytes(data[36:38],'big',signed=True)
+    m['scan_type'] = int.from_bytes(data[38:39],'big')
+    m['antenna_id'] = int.from_bytes(data[40:41],'big')
+    m['operational_mode'] = int.from_bytes(data[41:42],'big')
+    m['num_samples_message'] = int.from_bytes(data[42:44],'big')
+    m['num_samples_total'] = int.from_bytes(data[44:48],'big')
+    m['message_index'] = int.from_bytes(data[48:50],'big')
+    m['num_messages_total'] = int.from_bytes(data[50:52],'big')
+    m['scan_data'] = int.from_bytes(data[52:56],'big', signed=True)
+    print(m['scan_data'])
+
 #mainDecoder
 def decodeMessage(data):
     m = OrderedDict()
@@ -176,6 +192,8 @@ def decodeMessage(data):
         decodeSetSleepmode(data, m)
     elif m['message_type'] == 61702:#F106
         decodeGetSleepmode(data, m)
+    elif m['message_type'] == 61953: #F201
+        decodeScan(data, m)
     return m
 
 def encodeCommConf(messageID):
@@ -191,7 +209,7 @@ def encodeSetConf(messageID):
     message = bytes.fromhex("1001") + int.to_bytes(messageID, 2, 'big')
     node_id = 1
     scanStart = 0 #+/-499,998 ps
-    scanEnd = 200000 #+/-499,998 ps
+    scanEnd = 100000 #+/-499,998 ps
     scan_res = 32 #1-511
     baseInter = 6 #6-15
     message = message + int.to_bytes(node_id, 4, 'big')
@@ -267,6 +285,19 @@ messageID += 1
 
 send_receive(encodeCtrlReq(messageID))
 messageID += 1
+
+
+data, address = s.recvfrom(4096)
+message = decodeMessage(data)
+logger.info(message)
+
+data, address = s.recvfrom(4096)
+message = decodeMessage(data)
+logger.info(message)
+
+data, address = s.recvfrom(4096)
+message = decodeMessage(data)
+logger.info(message)
 
 '''
 send_receive(encodeServerConnect(messageID))
