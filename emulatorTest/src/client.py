@@ -151,6 +151,7 @@ def decodeCommComfirm(data, m):
 
 #F201
 def decodeScan(data):
+    global m
     m = OrderedDict()
     m['message_type'] = int.from_bytes(data[0:2],'big')
     m['message_id'] = int.from_bytes(data[2:4],'big')
@@ -175,7 +176,6 @@ def decodeScan(data):
 
 #mainDecoder
 def decodeMessage(data):
-    global m
     m = OrderedDict()
     m['message_type'] = int.from_bytes(data[0:2],'big')
     m['message_id'] = int.from_bytes(data[2:4],'big')
@@ -310,12 +310,12 @@ send_receive(encodeCtrlReq())
 data, address = s.recvfrom(4096)
 message = decodeScan(data)
 logger.info(message)
-numtotal = m['num_messages_total']
+numtotal = message['num_messages_total']
 
 
 for i in range(numtotal-1):
     data, address = s.recvfrom(4096)
-    message = decodeMessage(data)
+    message = decodeScan(data)
     logger.info(message)
 
 
