@@ -1,10 +1,13 @@
 import socket
 import logging
+import pickle as pkl
 import numpy as np
+import matplotlib.pyplot as plt
 from collections import OrderedDict
 
-#sets up message ID counter
+#sets up constants
 messageID = 0
+scanCount = 2000
 
 #sets up logger
 logger = logging.getLogger(__name__)
@@ -152,7 +155,6 @@ def decodeCommComfirm(data, m):
 
 #F201
 def decodeScan(data):
-    global m
     m = OrderedDict()
     m['message_type'] = int.from_bytes(data[0:2],'big')
     m['message_id'] = int.from_bytes(data[2:4],'big')
@@ -276,11 +278,10 @@ def encodeServerDisconnect():
     return message
 
 #1003
-def encodeCtrlReq(): 
+def encodeCtrlReq(scanCount): 
     global messageID
     message = bytes.fromhex('1003') + int.to_bytes(messageID, 2, 'big')
     messageID += 1
-    scanCount = 1
     reserved = 0
     scanIntTime = 0
     message = message + int.to_bytes(scanCount, 2, 'big')
@@ -305,23 +306,28 @@ send_receive(encodeSetConf())
 send_receive(encodeGetConf())
 
 
-send_receive(encodeCtrlReq())
+send_receive(encodeCtrlReq(scanCount))
 
+datalist = []
 
-data, address = s.recvfrom(4096)
-message = decodeScan(data)
-logger.info(message)
-numtotal = message['num_messages_total']
-datalist =[1,4,5]
-
-for i in range(numtotal-1):
+for scan in range(scanCount):
     data, address = s.recvfrom(4096)
     message = decodeScan(data)
-    #datalist([1,3,5])
-    logger.info(message)
+    #logger.info(message)
+    messageNum = message['num_messages_total']
+    datalist.append(message['scan_data'])
 
-print(datalist)
-print("hello")
+    for i in range(messageNum-1):
+        data, address = s.recvfrom(4096)
+        message = decodeScan(data)
+        datalist[scan] += message['scan_data']
+        #logger.info(message)
+    #plt.plot(datalist[scan])
 
+print()
+
+datalist = np.array(datalist)
 
 s.close()
+
+#plt.show()

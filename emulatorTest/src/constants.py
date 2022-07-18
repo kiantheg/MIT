@@ -89,7 +89,7 @@ HOST_IP = 'localhost' # Host IP address
 HOST_PORT = 10000 # Host port
 RADAR_IP = 'localhost' # Radar IP address; [1] states this is the default value but is not always the case
 RADAR_PORT = 21210 # Radar port
-IDLE_TIMEOUT = 10 # Amount of time (s) for emulator to idle for before shutting down
+IDLE_TIMEOUT = 20 # Amount of time (s) for emulator to idle for before shutting down
 
 # API constants/special values
 MAX_PACKET_SIZE = 1500 # (bytes)
