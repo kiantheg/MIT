@@ -1,5 +1,6 @@
 import socket
 import logging
+import numpy as np
 from collections import OrderedDict
 
 #sets up message ID counter
@@ -279,7 +280,7 @@ def encodeCtrlReq():
     global messageID
     message = bytes.fromhex('1003') + int.to_bytes(messageID, 2, 'big')
     messageID += 1
-    scanCount = 1
+    scanCount = 3
     reserved = 0
     scanIntTime = 0
     message = message + int.to_bytes(scanCount, 2, 'big')
@@ -311,12 +312,15 @@ data, address = s.recvfrom(4096)
 message = decodeScan(data)
 logger.info(message)
 numtotal = message['num_messages_total']
-
+datarray = np.array(message['scan_data'])
 
 for i in range(numtotal-1):
     data, address = s.recvfrom(4096)
     message = decodeScan(data)
+    np.append(datarray, message['scan_data'])
     logger.info(message)
+
+print(datarray)
 
 
 s.close()
