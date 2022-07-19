@@ -5,10 +5,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 from Point import Point
+from constants import SPEED_OF_LIGHT
 
 #sets up constants
 messageID = 0
 scanCount = 1
+STEP_FOR_200000ps = 20 - 19.99056842
+STEP_FOR_400000ps = 20 - 19.98140632
 
 #sets up logger
 logger = logging.getLogger(__name__)
@@ -331,5 +334,4 @@ datalist = np.array(datalist)
 
 s.close()
 
-p1 = Point(1, 2, 3)
-p1.distance(Point(2,2,3))
+
