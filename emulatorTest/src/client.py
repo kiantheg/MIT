@@ -5,11 +5,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 from Point import Point
-from constants import SPEED_OF_LIGHT
+#from constants import SPEED_OF_LIGHT
 
 #sets up constants
 messageID = 0
-scanCount = 1
+scanCount = 200
 STEP_FOR_200000ps = 20 - 19.99056842
 STEP_FOR_400000ps = 20 - 19.98140632
 
@@ -243,7 +243,7 @@ def encodeSetConf():
         message = message + int.to_bytes(0, 2, 'big')
     for i in range(4):
         message = message + int.to_bytes(0, 1, 'big')
-    ant_mode = 3 #2: B->A 3: A->B
+    ant_mode = 2 #2: B->A 3: A->B
     tx_gain_ind = 32 #0-63
     codeChannel = 7 #0-10
     persistFlag = 0 #0 - not persist 1 - will persist
@@ -326,12 +326,16 @@ for scan in range(scanCount):
         message = decodeScan(data)
         datalist[scan] += message['scan_data']
         #logger.info(message)
-    #plt.plot(datalist[scan])
+    plt.plot(datalist[0])
+    plt.plot(datalist[100])
+    plt.plot(datalist[200])
 
 print()
+print(len(datalist))
 
 datalist = np.array(datalist)
 
 s.close()
+plt.show()
 
 
