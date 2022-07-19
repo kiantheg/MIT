@@ -7,7 +7,7 @@ from collections import OrderedDict
 
 #sets up constants
 messageID = 0
-scanCount = 2000
+scanCount = 1
 
 #sets up logger
 logger = logging.getLogger(__name__)
@@ -227,7 +227,7 @@ def encodeSetConf():
     messageID += 1
     node_id = 1
     scanStart = 0 #+/-499,998 ps
-    scanEnd = 200000 #+/-499,998 ps
+    scanEnd = 400000 #+/-499,998 ps
     scan_res = 32 #1-511
     baseInter = 6 #6-15
     message = message + int.to_bytes(node_id, 4, 'big')
@@ -330,4 +330,6 @@ datalist = np.array(datalist)
 
 s.close()
 
-#plt.show()
+print((20 - 1.14627368)/2000/200000E-12)
+print((17.16877474 + 20)/2000/400000E-12)
+

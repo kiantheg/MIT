@@ -23,4 +23,4 @@ config:
       handlers:
         - console
         - file
-      level: 'DEBUG' # Effective logging level
+      level: 'STATE' # Effective logging level
