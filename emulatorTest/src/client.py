@@ -326,9 +326,24 @@ for scan in range(scanCount):
         message = decodeScan(data)
         datalist[scan] += message['scan_data']
         #logger.info(message)
-    plt.plot(datalist[0])
-    plt.plot(datalist[100])
-    plt.plot(datalist[200])
+'''
+fig, axs = plt.subplots(3)
+fig.suptitle('Vertically stacked subplots')
+axs[0].plot(datalist[0])
+axs[0].set_xlim([1500, 3500])
+axs[1].plot(datalist[100])
+axs[1].set_xlim([1500, 3500])
+axs[2].plot(datalist[199])
+axs[2].set_xlim([1500, 3500])
+'''
+fig, axs = plt.subplots(10)
+fig.suptitle('Vertically stacked subplots')
+shaa = 0
+for i in range(10):
+    axs[i].plot(datalist[shaa])
+    axs[i].set_xlim([1500,4000])
+    shaa += 19
+
 
 print()
 print(len(datalist))

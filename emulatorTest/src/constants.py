@@ -15,6 +15,7 @@ import numpy as np
 SPEED_OF_LIGHT = 299792458 # (m/s)
 K = 1.380649 * 10e-23 # Boltzmann constant (J/K)
 T0 = 290 # Standard system temperature (K)
+BANDWIDTH = 1.1 * 10e9
 
 # Specific recommended radar configurations
 REC_SCAN_RES = 32 # Scan resolution (bins)
