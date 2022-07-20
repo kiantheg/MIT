@@ -231,7 +231,7 @@ def encodeSetConf():
     messageID += 1
     node_id = 1
     scanStart = 0 #+/-499,998 ps
-    scanEnd = 400000 #+/-499,998 ps
+    scanEnd = 300000 #+/-499,998 ps
     scan_res = 32 #1-511
     baseInter = 6 #6-15
     message = message + int.to_bytes(node_id, 4, 'big')
@@ -313,11 +313,12 @@ send_receive(encodeGetConf())
 send_receive(encodeCtrlReq(scanCount))
 
 datalist = []
+timestamplist = []
 
 for scan in range(scanCount):
     data, address = s.recvfrom(4096)
     message = decodeScan(data)
-    #logger.info(message)
+    #logger.info(message['timestamp'])
     messageNum = message['num_messages_total']
     datalist.append(message['scan_data'])
 
@@ -325,16 +326,10 @@ for scan in range(scanCount):
         data, address = s.recvfrom(4096)
         message = decodeScan(data)
         datalist[scan] += message['scan_data']
-        #logger.info(message)
-'''
-fig, axs = plt.subplots(3)
-fig.suptitle('Vertically stacked subplots')
-axs[0].plot(datalist[0])
-axs[0].set_xlim([1500, 3500])
-axs[1].plot(datalist[100])
-axs[1].set_xlim([1500, 3500])
-axs[2].plot(datalist[199])
-axs[2].set_xlim([1500, 3500])
+    timestamplist.append(message['timestamp'])
+#print(timestamplist)
+    #print(message['message_index'],message['timestamp'])
+    #logger.info(message['message_index'], message['timestamp'])
 '''
 fig, axs = plt.subplots(10)
 fig.suptitle('Vertically stacked subplots')
@@ -343,7 +338,9 @@ for i in range(10):
     axs[i].plot(datalist[shaa])
     axs[i].set_xlim([1500,4000])
     shaa += 19
-
+'''
+CPI = timestamplist[-1] - timestamplist[0]
+print(CPI)
 
 print()
 print(len(datalist))
@@ -351,6 +348,6 @@ print(len(datalist))
 datalist = np.array(datalist)
 
 s.close()
-plt.show()
+#plt.show()
 
 

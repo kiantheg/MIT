@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """Constants related to radar operation in general and to PulsON 440 specifically."""
 
+
 __author__ = "Ramamurthy Bhagavatula, Michael Riedl"
 __version__ = "1.0"
 __maintainer__ = "Ramamurthy Bhagavatula"
@@ -16,6 +17,13 @@ SPEED_OF_LIGHT = 299792458 # (m/s)
 K = 1.380649 * 10e-23 # Boltzmann constant (J/K)
 T0 = 290 # Standard system temperature (K)
 BANDWIDTH = 1.1 * 10e9
+CENTERED_FREQUENCY = 4.3 * 10e9
+CENTERED_WAVELENGTH = 1/CENTERED_FREQUENCY
+VELOCITY = 2.0
+##WAVELENGTH = 7 * 10e-2
+##VELOCITY = 2.0
+##RANGE = 16.7
+##PRF = 15
 
 # Specific recommended radar configurations
 REC_SCAN_RES = 32 # Scan resolution (bins)
