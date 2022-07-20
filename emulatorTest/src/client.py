@@ -339,8 +339,12 @@ for i in range(10):
     axs[i].set_xlim([1500,4000])
     shaa += 19
 '''
-CPI = timestamplist[-1] - timestamplist[0]
+CPI = (timestamplist[-1] - timestamplist[0])/1000
+print(timestamplist)
 print(CPI)
+
+#velocity = ((20+17.16877474)/CPI)*1000
+#print(velocity)
 
 print()
 print(len(datalist))
