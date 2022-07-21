@@ -19,9 +19,8 @@ CROSS_RESOLUTION = 0.07
 
 LENGTH = 247
 WIDTH = 247
-grid = np.zeros((int(LENGTH), int(WIDTH)))
-plt.imshow(grid, cmap='gray')
-plt.show()
+#grid = np.zeros((int(LENGTH), int(WIDTH)))
+#plt.imshow(grid, cmap='gray')
 
 #print(RESOLUTION)
 #print(CROSS_RESOLUTION)
