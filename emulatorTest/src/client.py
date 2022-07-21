@@ -354,17 +354,23 @@ s.close()
 xPixel = WIDTH/CROSS_RESOLUTION
 yPixel = LENGTH/RANGE_RESOLUTION
 
-arr = np.zeros((int(1000), int(1000)))
+arr = np.zeros((int(600), int(600)))
+indexlist = []
 
 for radar_pos in range(0, int(xPixel), int(xPixel/scanCount))  : #update radar position
-    for xpos in range(int(1000)): #iterate through x
-        for ypos in range(int(1000)): #iterate through y
+    '''
+    for scan in range(200):    
+        radar_pos = -20 + STEP_FOR_400000ps*scan
+        '''
+    for xpos in range(int(600)): #iterate through x
+        for ypos in range(int(600)): #iterate through y
             #calculate distance from radar to pixel and add energy level to that point
-            index = int(((5)**2 + (5 - radar_pos)**2)**(.5))
-            arr[xpos][ypos] += datalist[0][index]
+            index = int(((ypos-15)**2 + (xpos - radar_pos)**2)**(.5))
+            indexlist.append(index)
+            arr[xpos][ypos] += datalist[scan][index]
 
     #get new scan data
-print(len(arr))
+print(max(indexlist))
 arr /= arr.max()
 arr = abs(arr)
 print(arr)
