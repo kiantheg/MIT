@@ -5,6 +5,7 @@ import logging
 import pickle as pkl
 
 from pkg_resources import safe_extra
+from constants import SPEED_OF_LIGHT
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
@@ -354,7 +355,8 @@ print()
 
 datalist = np.array(datalist)
 s.close()
-
+print("scan data length")
+print(len(datalist[0]))
 xPixel = WIDTH/CROSS_RESOLUTION
 yPixel = LENGTH/RANGE_RESOLUTION
 
@@ -397,6 +399,12 @@ def makeGrid(xPixel, yPixel, dim):
         yPos.append(yPixel*i)
     return xPos, yPos
 
+#could improved
+#distance = 61e-9 * SPEED_OF_LIGHT * 2
+rangeBins = []
+for i in range(len(datalist[0])):
+    rangeBins.append(61e-9 * SPEED_OF_LIGHT * 2 * (i+1))
+
 def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
     numY = len(yCor)
@@ -405,10 +413,10 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     for x in range(numX):
         for y in range(numY):
             for scan in range(scanCount):
-                RANGE_TO_TARGET = Point(platformX,15,5).distance(Point(x,y,0))
+                #RANGE_TO_TARGET = Point(platformX,15,5).distance(Point(x,y,0))
                 platformX += STEP_FOR_400000ps
-                #oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                closestIndex = int(np.abs(RANGE_TO_TARGET))
+                oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
+                closestIndex = np.argmin(np.abs(oneWayRange - rangeBins))
                 sar_image_complex[y][x] += datalist[scan][closestIndex]
     image = abs(sar_image_complex)
     #print(image)
@@ -418,7 +426,7 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
 
 xPos, yPos = makeGrid(xPixel, yPixel, 100)
 print()
-plt.imshow(paintImage(datalist, RANGE_RESOLUTION, readPlatformPos(), xPos, yPos), cmap='gray')
+plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(), xPos, yPos), cmap='gray')
 plt.show()
 
 
