@@ -1,3 +1,5 @@
+from operator import xor
+from platform import platform
 import socket
 import logging
 import pickle as pkl
@@ -354,14 +356,16 @@ s.close()
 xPixel = WIDTH/CROSS_RESOLUTION
 yPixel = LENGTH/RANGE_RESOLUTION
 
-arr = np.zeros((int(600), int(600)))
+'''
+
 indexlist = []
+arr = np.zeros((int(1000), int(1000)))
 
 for radar_pos in range(0, int(xPixel), int(xPixel/scanCount))  : #update radar position
-    '''
+
     for scan in range(200):    
         radar_pos = -20 + STEP_FOR_400000ps*scan
-        '''
+
     for xpos in range(int(600)): #iterate through x
         for ypos in range(int(600)): #iterate through y
             #calculate distance from radar to pixel and add energy level to that point
@@ -378,5 +382,29 @@ print(arr)
 plt.imshow(arr, cmap='gray')
 plt.colorbar()
 plt.show()
+'''
+def readPlatformPos():
+    data = pkl.load(open("/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output/20220719T103736_5_point_scatter_platform_pos.pkl", "rb"))
+    platformPos = data['platform_pos']
+    return platformPos
+def makeGrid(xPixel, yPixel, dim):
+    xPos = []
+    yPos = []
+    for i in range(dim):
+        xPos.append(xPixel*i)
+        yPos.append(yPixel*i)
+    return xPos, yPos
+def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
+    numX = len(xCor)
+    numY = len(yCor)
+    sar_image_complex = np.zeros((numY,numX), dtype=np.complex)
+    for x in range(numX):
+        for y in range(numY):
+            for scan in range(scanCount):
+                oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
+                closestIndex = np.argmin(np.abs(oneWayRange - rangeBins))
+                sar_image_complex[y][x] += datalist[scan][closestIndex]
 
+
+paintImage(datalist, RANGE_RESOLUTION, readPlatformPos(), )
 
