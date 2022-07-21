@@ -403,7 +403,8 @@ def makeGrid(xPixel, yPixel, dim):
 #distance = 61e-9 * SPEED_OF_LIGHT * 2
 rangeBins = []
 for i in range(len(datalist[0])):
-    rangeBins.append(61e-9 * SPEED_OF_LIGHT * 2 * (i+1))
+    rangeBins.append(61e-12 * SPEED_OF_LIGHT * 2 * (i+1))
+
 
 def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
