@@ -396,15 +396,19 @@ def makeGrid(xPixel, yPixel, dim):
         xPos.append(xPixel*i)
         yPos.append(yPixel*i)
     return xPos, yPos
+
 def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
     numY = len(yCor)
     sar_image_complex = np.zeros((numY,numX))
+    platformX = -20
     for x in range(numX):
         for y in range(numY):
             for scan in range(scanCount):
-                oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                closestIndex = int(np.abs(oneWayRange)/66)
+                RANGE_TO_TARGET = Point(platformX,15,5).distance(Point(x,y,0))
+                platformX += STEP_FOR_400000ps
+                #oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
+                closestIndex = int(np.abs(RANGE_TO_TARGET))
                 sar_image_complex[y][x] += datalist[scan][closestIndex]
     image = abs(sar_image_complex)
     #print(image)
