@@ -3,6 +3,8 @@ from platform import platform
 import socket
 import logging
 import pickle as pkl
+
+from pkg_resources import safe_extra
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
@@ -356,18 +358,18 @@ s.close()
 xPixel = WIDTH/CROSS_RESOLUTION
 yPixel = LENGTH/RANGE_RESOLUTION
 
-'''
 
+'''
 indexlist = []
-arr = np.zeros((int(1000), int(1000)))
+arr = np.zeros((int(300), int(300)))
 
 for radar_pos in range(0, int(xPixel), int(xPixel/scanCount))  : #update radar position
-
-    for scan in range(200):    
-        radar_pos = -20 + STEP_FOR_400000ps*scan
-
-    for xpos in range(int(600)): #iterate through x
-        for ypos in range(int(600)): #iterate through y
+    
+    #for scan in range(200):    
+    #    radar_pos = -20 + STEP_FOR_400000ps*scan
+    
+    for xpos in range(int(300)): #iterate through x
+        for ypos in range(int(300)): #iterate through y
             #calculate distance from radar to pixel and add energy level to that point
             index = int(((ypos-15)**2 + (xpos - radar_pos)**2)**(.5))
             indexlist.append(index)
@@ -397,14 +399,22 @@ def makeGrid(xPixel, yPixel, dim):
 def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
     numY = len(yCor)
-    sar_image_complex = np.zeros((numY,numX), dtype=np.complex)
+    sar_image_complex = np.zeros((numY,numX))
     for x in range(numX):
         for y in range(numY):
             for scan in range(scanCount):
                 oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                closestIndex = np.argmin(np.abs(oneWayRange - rangeBins))
+                closestIndex = int(np.abs(oneWayRange)/66)
                 sar_image_complex[y][x] += datalist[scan][closestIndex]
+    image = abs(sar_image_complex)
+    #print(image)
+    #print(sar_image_complex)
+    image /= image.max()
+    return image
 
+xPos, yPos = makeGrid(xPixel, yPixel, 100)
+print()
+plt.imshow(paintImage(datalist, RANGE_RESOLUTION, readPlatformPos(), xPos, yPos), cmap='gray')
+plt.show()
 
-paintImage(datalist, RANGE_RESOLUTION, readPlatformPos(), )
 
