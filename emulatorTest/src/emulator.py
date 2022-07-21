@@ -298,9 +298,10 @@ class Emulator:
                 with open(self.offline_data_file, 'rb') as f:
                     offline_data = pickle.load(f)
                 # Normalize scan data to be in [-1, 1] range
-                self.offline_scan_data = offline_data['scan_data'].astype(float)
-                self.offline_scan_data = \
-                    np.abs(self.offline_scan_data) / np.amax(np.abs(self.offline_scan_data))
+                self.offline_scan_data = deepcopy(offline_data['scan_data'])
+                self.offline_scan_data = self.offline_scan_data.astype(float)
+                self.offline_scan_data = np.real(self.offline_scan_data)
+                self.offline_scan_data /= np.amax(np.abs(self.offline_scan_data))
                 # Platform position (m) and range bins (m)
                 self.offline_platform_pos = offline_data['platform_pos']
                 self.offline_range_bins = offline_data['range_bins']
