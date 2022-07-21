@@ -3,7 +3,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 from constants import SPEED_OF_LIGHT, BANDWIDTH, T0, CENTERED_WAVELENGTH, CENTERED_FREQUENCY, VELOCITY
 from Point import Point
-from client import CPI, scanCount
+
 
 ##R = tc/2
 
@@ -16,8 +16,10 @@ def tou(a, b):
 #CROSS_RESOLUTION = CENTERED_WAVELENGTH * RANGE_TO_TARGET / (2*VELOCITY*CPI)
 RANGE_RESOLUTION = 0.06
 CROSS_RESOLUTION = 0.07
-dimensions = 500
-grid = np.zeros((int(dimensions/RANGE_RESOLUTION), int(dimensions/CROSS_RESOLUTION)))
+
+LENGTH = 247
+WIDTH = 247
+grid = np.zeros((int(LENGTH), int(WIDTH)))
 plt.imshow(grid, cmap='gray')
 plt.show()
 

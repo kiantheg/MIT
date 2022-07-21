@@ -5,6 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 from Point import Point
+from Functions import LENGTH, WIDTH, RANGE_RESOLUTION, CROSS_RESOLUTION
 #from constants import SPEED_OF_LIGHT
 
 #sets up constants
@@ -231,7 +232,7 @@ def encodeSetConf():
     messageID += 1
     node_id = 1
     scanStart = 0 #+/-499,998 ps
-    scanEnd = 300000 #+/-499,998 ps
+    scanEnd = 400000 #+/-499,998 ps
     scan_res = 32 #1-511
     baseInter = 6 #6-15
     message = message + int.to_bytes(node_id, 4, 'big')
@@ -340,8 +341,7 @@ for i in range(10):
     shaa += 19
 '''
 CPI = (timestamplist[-1] - timestamplist[0])/1000
-print(timestamplist)
-print(CPI)
+#print(CPI)
 
 #velocity = ((20+17.16877474)/CPI)*1000
 #print(velocity)
@@ -350,8 +350,30 @@ print()
 print(len(datalist))
 
 datalist = np.array(datalist)
-
+print(type(datalist))
 s.close()
+
+xPixel = WIDTH/CROSS_RESOLUTION
+yPixel = LENGTH/RANGE_RESOLUTION
+
+print(xPixel, yPixel)
+print(len(datalist))
+
+arr = np.zeros((int(xPixel), int(yPixel)))
+
+for radar_pos in range(0, int(xPixel), int(xPixel/scanCount))  : #update radar position
+    for xpos in range(int(3000)): #iterate through x
+        for ypos in range(int(3000)): #iterate through y
+            #calculate distance from radar to pixel and add energy level to that point
+            index = int(((ypos)**2 + (xpos - radar_pos)**2)**(.5))
+            arr[xpos][ypos] += datalist[0][index]
+
+    #get new scan data
+
+arr /= arr.max()
+
+plt.imshow(arr, cmap='gray')
+plt.colorbar()
 #plt.show()
 
 
