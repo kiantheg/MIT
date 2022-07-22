@@ -3,6 +3,7 @@ from platform import platform
 import socket
 import logging
 import pickle as pkl
+from turtle import xcor
 
 from pkg_resources import safe_extra
 from constants import SPEED_OF_LIGHT
@@ -10,7 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 from Point import Point
-from Functions import LENGTH, WIDTH, RANGE_RESOLUTION, CROSS_RESOLUTION
+from Functions import RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION
 #from constants import SPEED_OF_LIGHT
 
 #sets up constants
@@ -236,8 +237,8 @@ def encodeSetConf():
     message = bytes.fromhex("1001") + int.to_bytes(messageID, 2, 'big')
     messageID += 1
     node_id = 1
-    scanStart = 0 #+/-499,998 ps
-    scanEnd = 400000 #+/-499,998 ps
+    scanStart = int(2*10e12/SPEED_OF_LIGHT) #+/-499,998 ps
+    scanEnd = int(2*26e12/SPEED_OF_LIGHT) #+/-499,998 ps
     scan_res = 32 #1-511
     baseInter = 6 #6-15
     message = message + int.to_bytes(node_id, 4, 'big')
@@ -332,7 +333,7 @@ for scan in range(scanCount):
         data, address = s.recvfrom(4096)
         message = decodeScan(data)
         datalist[scan] += message['scan_data']
-    timestamplist.append(message['timestamp'])
+    
 #print(timestamplist)
     #print(message['message_index'],message['timestamp'])
     #logger.info(message['message_index'], message['timestamp'])
@@ -345,8 +346,7 @@ for i in range(10):
     axs[i].set_xlim([1500,4000])
     shaa += 19
 '''
-CPI = (timestamplist[-1] - timestamplist[0])/1000
-#print(CPI)
+#CPI = (timestamplist[-1] - timestamplist[0])/1000
 
 #velocity = ((20+17.16877474)/CPI)*1000
 #print(velocity)
@@ -354,11 +354,10 @@ CPI = (timestamplist[-1] - timestamplist[0])/1000
 print()
 
 datalist = np.array(datalist)
+
 s.close()
-print("scan data length")
-print(len(datalist[0]))
-xPixel = WIDTH/CROSS_RESOLUTION
-yPixel = LENGTH/RANGE_RESOLUTION
+xPixel = CROSS_RANGE_RESOLUTION
+yPixel = RANGE_RESOLUTION
 
 
 '''
@@ -388,22 +387,23 @@ plt.colorbar()
 plt.show()
 '''
 def readPlatformPos():
-    data = pkl.load(open("/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output/20220719T103736_5_point_scatter_platform_pos.pkl", "rb"))
+    data = pkl.load(open("/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output/PLATFORMPOS.pkl", "rb"))
     platformPos = data['platform_pos']
     return platformPos
+
 def makeGrid(xPixel, yPixel, dim):
     xPos = []
     yPos = []
     for i in range(dim):
-        xPos.append(xPixel*i)
-        yPos.append(yPixel*i)
+        xPos.append(-7+xPixel*i)
+        yPos.append(-7+yPixel*i)
     return xPos, yPos
 
 #could improved
 #distance = 61e-9 * SPEED_OF_LIGHT * 2
 rangeBins = []
 for i in range(len(datalist[0])):
-    rangeBins.append(61e-9 * SPEED_OF_LIGHT * 2 * (i+1))
+    rangeBins.append(61e-12 * SPEED_OF_LIGHT * (i+1))
 
 def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
@@ -413,19 +413,23 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     for x in range(numX):
         for y in range(numY):
             for scan in range(scanCount):
-                #RANGE_TO_TARGET = Point(platformX,15,5).distance(Point(x,y,0))
-                platformX += STEP_FOR_400000ps
+                #RANGE_TO_TARGET = np.float(Point(platformX,15,5).distance(Point(x,y,0)))
+                #platformX += STEP_FOR_400000ps
                 oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                closestIndex = np.argmin(np.abs(oneWayRange - rangeBins))
+                #print(oneWayRange)
+                closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
                 sar_image_complex[y][x] += datalist[scan][closestIndex]
-    image = abs(sar_image_complex)
     #print(image)
     #print(sar_image_complex)
-    image /= image.max()
-    return image
+    sar_image_complex /= abs(sar_image_complex).max()
+    print(sar_image_complex.max())
+    #sar_image_complex /= abs(sar_image_complex).max()
+    return sar_image_complex
 
-xPos, yPos = makeGrid(xPixel, yPixel, 100)
+xPos, yPos = makeGrid(xPixel, yPixel, 70)
 print()
+print(xPos)
+print(yPos)
 plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(), xPos, yPos), cmap='gray')
 plt.show()
 
