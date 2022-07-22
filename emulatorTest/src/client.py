@@ -388,7 +388,7 @@ plt.colorbar()
 plt.show()
 '''
 def readPlatformPos():
-    data = pkl.load(open("/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output/20220719T103736_5_point_scatter_platform_pos.pkl", "rb"))
+    data = pkl.load(open("/Users/kianchen/Desktop/BeaverWorks/team5/emulatorTest/output/20220719T103736_5_point_scatter_platform_pos.pkl", "rb"))
     platformPos = data['platform_pos']
     return platformPos
 def makeGrid(xPixel, yPixel, dim):
@@ -422,10 +422,10 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     image = abs(sar_image_complex)
     #print(image)
     #print(sar_image_complex)
-    image /= image.max()
-    return image
+    sar_image_complex /= abs(sar_image_complex).max()
+    return sar_image_complex
 
-xPos, yPos = makeGrid(xPixel, yPixel, 100)
+xPos, yPos = makeGrid(xPixel, yPixel, 20)
 print()
 plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(), xPos, yPos), cmap='gray')
 plt.show()
