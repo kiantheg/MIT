@@ -16,7 +16,7 @@ from Functions import RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION
 
 #sets up constants
 messageID = 0
-scanCount = 2000
+scanCount = 200
 STEP_FOR_200000ps = 20 - 19.99056842
 STEP_FOR_400000ps = 20 - 19.98140632
 
@@ -426,7 +426,7 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     #sar_image_complex /= abs(sar_image_complex).max()
     return sar_image_complex
 
-xPos, yPos = makeGrid(xPixel, yPixel, 100)
+xPos, yPos = makeGrid(xPixel, yPixel, 70)
 print()
 print(xPos)
 print(yPos)
