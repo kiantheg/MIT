@@ -3,6 +3,7 @@ from platform import platform
 import socket
 import logging
 import pickle as pkl
+from turtle import xcor
 
 from pkg_resources import safe_extra
 from constants import SPEED_OF_LIGHT
@@ -357,8 +358,8 @@ datalist = np.array(datalist)
 s.close()
 print("scan data length")
 print(len(datalist[0]))
-xPixel = WIDTH/CROSS_RESOLUTION
-yPixel = LENGTH/RANGE_RESOLUTION
+xPixel = CROSS_RESOLUTION
+yPixel = RANGE_RESOLUTION
 
 
 '''
@@ -405,6 +406,7 @@ rangeBins = []
 for i in range(len(datalist[0])):
     rangeBins.append(61e-12 * SPEED_OF_LIGHT * 2 * (i+1))
 
+print(rangeBins)
 
 def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
@@ -417,7 +419,8 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
                 #RANGE_TO_TARGET = Point(platformX,15,5).distance(Point(x,y,0))
                 platformX += STEP_FOR_400000ps
                 oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                closestIndex = np.argmin(np.abs(oneWayRange - rangeBins))
+                #print(oneWayRange)
+                closestIndex = np.argmin(np.abs(oneWayRange))
                 sar_image_complex[y][x] += datalist[scan][closestIndex]
     image = abs(sar_image_complex)
     #print(image)
@@ -425,8 +428,10 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     sar_image_complex /= abs(sar_image_complex).max()
     return sar_image_complex
 
-xPos, yPos = makeGrid(xPixel, yPixel, 20)
+xPos, yPos = makeGrid(xPixel, yPixel, 500)
 print()
+print(xPos)
+print(yPos)
 plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(), xPos, yPos), cmap='gray')
 plt.show()
 
