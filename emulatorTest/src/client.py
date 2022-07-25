@@ -11,12 +11,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 from Point import Point
+<<<<<<< Updated upstream
 from Functions import RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION
+=======
+from alive_progress import alive_bar
+from Configuration import RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, SCAN_START, SCAN_END, SCAN_RES, BII, PLATFORM_POS
+>>>>>>> Stashed changes
 #from constants import SPEED_OF_LIGHT
 
 #sets up constants
 messageID = 0
-scanCount = 200
+scanCount = 2000
 STEP_FOR_200000ps = 20 - 19.99056842
 STEP_FOR_400000ps = 20 - 19.98140632
 
@@ -386,8 +391,8 @@ plt.imshow(arr, cmap='gray')
 plt.colorbar()
 plt.show()
 '''
-def readPlatformPos():
-    data = pkl.load(open("/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/output/PLATFORMPOS.pkl", "rb"))
+def readPlatformPos(filepath):
+    data = pkl.load(open(filepath, "rb"))
     platformPos = data['platform_pos']
     return platformPos
 
@@ -409,6 +414,7 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
     numY = len(yCor)
     sar_image_complex = np.zeros((numY,numX))
+<<<<<<< Updated upstream
     platformX = -20
     for x in range(numX):
         for y in range(numY):
@@ -419,6 +425,21 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
                 #print(oneWayRange)
                 closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
                 sar_image_complex[y][x] += datalist[scan][closestIndex]
+=======
+    with alive_bar(numX) as bar:
+        for x in range(numX):
+            for y in range(numY):
+                for scan in range(scanCount):
+                    #RANGE_TO_TARGET = np.float(Point(platformX,15,5).distance(Point(x,y,0)))
+                    #platformX += STEP_FOR_400000ps
+                    oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
+                    #print(oneWayRange)
+                    #closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
+                    totalTime = oneWayRange * 1e12 / SPEED_OF_LIGHT
+                    shift = int(totalTime / 61)
+                    sar_image_complex[y][x] += datalist[scan][shift]
+            bar()
+>>>>>>> Stashed changes
     #print(image)
     #print(sar_image_complex)
     sar_image_complex /= abs(sar_image_complex).max()
@@ -430,7 +451,7 @@ xPos, yPos = makeGrid(xPixel, yPixel, 70)
 print()
 print(xPos)
 print(yPos)
-plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(), xPos, yPos), cmap='gray')
+plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray')
 plt.show()
 
 
