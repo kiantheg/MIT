@@ -322,7 +322,6 @@ for scan in range(SCAN_COUNT):
     #logger.info(message['timestamp'])
     messageNum = message['num_messages_total']
     datalist.append(message['scan_data'])
-
     for i in range(messageNum-1):
         data, address = s.recvfrom(4096)
         message = decodeScan(data)
