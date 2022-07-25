@@ -283,7 +283,7 @@ def encodeServerDisconnect():
     return message
 
 #1003
-def encodeCtrlReq(scanCount): 
+def encodeCtrlReq(scanCount):
     global messageID
     message = bytes.fromhex('1003') + int.to_bytes(messageID, 2, 'big')
     messageID += 1
@@ -293,7 +293,7 @@ def encodeCtrlReq(scanCount):
     message = message + int.to_bytes(reserved, 2, 'big')
     message = message + int.to_bytes(scanIntTime, 4, 'big')
     return message
-    
+
 
 def send_receive(message):
     s.sendall(message)
@@ -327,7 +327,7 @@ for scan in range(SCAN_COUNT):
         data, address = s.recvfrom(4096)
         message = decodeScan(data)
         datalist[scan] += message['scan_data']
-    
+
 #CPI = (timestamplist[-1] - timestamplist[0])/1000
 
 print()
@@ -347,9 +347,10 @@ def readPlatformPos(filepath):
 
 #could improved
 #distance = 61e-9 * SPEED_OF_LIGHT * 2
-rangeBins = []
+rangeBins = [] #or this: rangebins = np.arange(61e-12*SPEED_OF_LIGHT, (len(datalist[0])+1)*61e-12*SPEED_OF_LIGHT, 61e-12*SPEED_OF_LIGHT)
 for i in range(len(datalist[0])):
     rangeBins.append(61e-12 * SPEED_OF_LIGHT * (i+1))
+
 
 def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
