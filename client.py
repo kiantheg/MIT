@@ -331,22 +331,7 @@ for scan in range(scanCount):
         message = decodeScan(data)
         datalist[scan] += message['scan_data']
     
-#print(timestamplist)
-    #print(message['message_index'],message['timestamp'])
-    #logger.info(message['message_index'], message['timestamp'])
-'''
-fig, axs = plt.subplots(10)
-fig.suptitle('Vertically stacked subplots')
-shaa = 0
-for i in range(10):
-    axs[i].plot(datalist[shaa])
-    axs[i].set_xlim([1500,4000])
-    shaa += 19
-'''
 #CPI = (timestamplist[-1] - timestamplist[0])/1000
-
-#velocity = ((20+17.16877474)/CPI)*1000
-#print(velocity)
 
 print()
 print(datalist[0])
@@ -356,41 +341,19 @@ s.close()
 xPixel = CROSS_RANGE_RESOLUTION
 yPixel = RANGE_RESOLUTION
 
-
-'''
-indexlist = []
-arr = np.zeros((int(300), int(300)))
-for radar_pos in range(0, int(xPixel), int(xPixel/scanCount))  : #update radar position
-    
-    #for scan in range(200):    
-    #    radar_pos = -20 + STEP_FOR_400000ps*scan
-    
-    for xpos in range(int(300)): #iterate through x
-        for ypos in range(int(300)): #iterate through y
-            #calculate distance from radar to pixel and add energy level to that point
-            index = int(((ypos-15)**2 + (xpos - radar_pos)**2)**(.5))
-            indexlist.append(index)
-            arr[xpos][ypos] += datalist[scan][index]
-    #get new scan data
-print(max(indexlist))
-arr /= arr.max()
-arr = abs(arr)
-print(arr)
-plt.imshow(arr, cmap='gray')
-plt.colorbar()
-plt.show()
-'''
 def readPlatformPos(filepath):
     data = pkl.load(open(filepath, "rb"))
     platformPos = data['platform_pos']
+    print(platformPos)
     return platformPos
+
 
 def makeGrid(xPixel, yPixel, dim):
     xPos = []
     yPos = []
     for i in range(dim):
-        xPos.append(-1+xPixel*i)
-        yPos.append(-1+yPixel*i)
+        xPos.append(-10+xPixel*i)
+        yPos.append(-10+yPixel*i)
     return xPos, yPos
 
 #could improved
@@ -402,34 +365,29 @@ for i in range(len(datalist[0])):
 def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
     numY = len(yCor)
-    shiftlist = []
     sar_image_complex = np.zeros((numY,numX))
     with alive_bar(numX) as bar:
         for x in range(numX):
             for y in range(numY):
-                #for scan in range(scanCount):
-                #RANGE_TO_TARGET = np.float(Point(platformX,15,5).distance(Point(x,y,0)))
-                #platformX += STEP_FOR_400000ps
-                oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                #print(oneWayRange)
-                #closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
-                totalTime = 2*oneWayRange * 1e12 / SPEED_OF_LIGHT
-                shift = min(int(totalTime / 61), len(datalist[0])-1)
-                shiftlist.append(shift)
-                sar_image_complex[y][x] += datalist[0][shift]
+                for scan in range(scanCount):
+                    oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
+                    #print(oneWayRange)
+                    #closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
+                    totalTime = 2*oneWayRange * 1e12 / SPEED_OF_LIGHT
+                    shift = min(int(totalTime / 61), len(datalist[0])-1)
+                    sar_image_complex[y][x] += datalist[0][shift]
             bar()
-    print(shiftlist)
     #print(image)
     #print(sar_image_complex)
-    print(sar_image_complex)
     sar_image_complex /= abs(sar_image_complex).max()
     #sar_image_complex /= abs(sar_image_complex).max()
     return sar_image_complex
 
-xPos, yPos = makeGrid(xPixel, yPixel, 20)
-print()
+xPos, yPos = makeGrid(xPixel, yPixel, 200)
 print(xPos)
 print(yPos)
+'''
+print()
 print()
 print(message['scan_type'])
 platformPos = readPlatformPos(PLATFORM_POS)
@@ -444,5 +402,6 @@ zoomedInData = []
 for i in range(-5,6):
     zoomedInData.append(datalist[0][shift+i])
 print(zoomedInData)
-#plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray')
-#plt.show()
+'''
+plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray')
+plt.show()
