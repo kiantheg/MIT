@@ -311,7 +311,7 @@ send_receive(encodeSetConf(SCAN_START, SCAN_END, SCAN_RES, BII))
 send_receive(encodeGetConf())
 
 
-send_receive(encodeCtrlReq(scanCount))
+send_receive(encodeCtrlReq(SCAN_COUNT))
 
 datalist = []
 timestamplist = []
@@ -333,7 +333,8 @@ for scan in range(SCAN_COUNT):
 print()
 print(datalist[0])
 datalist = np.array(datalist)
-
+with open('mypickle.pickle', 'wb') as f:
+    pkl.dump(datalist, f)
 s.close()
 xPixel = CROSS_RANGE_RESOLUTION
 yPixel = RANGE_RESOLUTION
@@ -363,7 +364,7 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
                     #closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
                     totalTime = 2*oneWayRange * 1e12 / SPEED_OF_LIGHT
                     closestIndex = min(int(totalTime / 61), len(datalist[0])-1)
-                    sar_image_complex[y][x] += datalist[scan][closestIndex]
+                    sar_image_complex[x][y] += datalist[scan][closestIndex]
             bar()
     #print(image)
     #print(sar_image_complex)
@@ -371,8 +372,8 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
     #sar_image_complex /= abs(sar_image_complex).max()
     return sar_image_complex
 
-xPos = np.arange(-10,10,xPixel)
-yPos = np.arange(-10,10,yPixel)
+xPos = np.arange(-20,10,xPixel)
+yPos = np.arange(-20,10,yPixel)
 '''
 print()
 print()
@@ -390,5 +391,5 @@ for i in range(-5,6):
     zoomedInData.append(datalist[0][shift+i])
 print(zoomedInData)
 '''
-#plt.imshow(paintImage(datalist, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray')
-#plt.show()
+plt.imshow(paintImage(datalist, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray')
+plt.show()
