@@ -345,13 +345,6 @@ def readPlatformPos(filepath):
     print(platformPos)
     return platformPos
 
-#could improved
-#distance = 61e-9 * SPEED_OF_LIGHT * 2
-rangeBins = [] #or this: rangebins = np.arange(61e-12*SPEED_OF_LIGHT, (len(datalist[0])+1)*61e-12*SPEED_OF_LIGHT, 61e-12*SPEED_OF_LIGHT)
-for i in range(len(datalist[0])):
-    rangeBins.append(61e-12 * SPEED_OF_LIGHT * (i+1))
-
-
 def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
     numY = len(yCor)
@@ -361,16 +354,11 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
             for y in range(numY):
                 for scan in range(SCAN_COUNT):
                     oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                    #print(oneWayRange)
-                    #closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
                     totalTime = 2*oneWayRange * 1e12 / SPEED_OF_LIGHT
                     closestIndex = min(int(totalTime / 61), len(datalist[0])-1)
                     sar_image_complex[x][y] += datalist[scan][closestIndex]
             bar()
-    #print(image)
-    #print(sar_image_complex)
     sar_image_complex /= abs(sar_image_complex).max()
-    #sar_image_complex /= abs(sar_image_complex).max()
     return sar_image_complex
 
 xPos = np.arange(-10,10,xPixel)
