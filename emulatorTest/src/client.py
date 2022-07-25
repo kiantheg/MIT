@@ -4,6 +4,7 @@ import socket
 import logging
 import pickle as pkl
 from turtle import xcor
+from wsgiref.util import shift_path_info
 
 from pkg_resources import safe_extra
 from constants import SPEED_OF_LIGHT
@@ -11,17 +12,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 from Point import Point
-<<<<<<< Updated upstream
-from Functions import RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION
-=======
 from alive_progress import alive_bar
 from Configuration import RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, SCAN_START, SCAN_END, SCAN_RES, BII, PLATFORM_POS
->>>>>>> Stashed changes
 #from constants import SPEED_OF_LIGHT
 
 #sets up constants
 messageID = 0
-scanCount = 2000
+scanCount = 200
 STEP_FOR_200000ps = 20 - 19.99056842
 STEP_FOR_400000ps = 20 - 19.98140632
 
@@ -237,15 +234,11 @@ def encodeCommConf():
     return message
 
 #1001
-def encodeSetConf():
+def encodeSetConf(scanStart, scanEnd, scan_res, baseInter):
     global messageID
     message = bytes.fromhex("1001") + int.to_bytes(messageID, 2, 'big')
     messageID += 1
     node_id = 1
-    scanStart = int(2*10e12/SPEED_OF_LIGHT) #+/-499,998 ps
-    scanEnd = int(2*26e12/SPEED_OF_LIGHT) #+/-499,998 ps
-    scan_res = 32 #1-511
-    baseInter = 6 #6-15
     message = message + int.to_bytes(node_id, 4, 'big')
     message = message + int.to_bytes(scanStart, 4, 'big', signed = True)
     message = message + int.to_bytes(scanEnd, 4, 'big', signed = True)
@@ -316,7 +309,7 @@ def send_receive(message):
 send_receive(encodeCommConf())
 
 
-send_receive(encodeSetConf())
+send_receive(encodeSetConf(SCAN_START, SCAN_END, SCAN_RES, BII))
 
 
 send_receive(encodeGetConf())
@@ -357,7 +350,7 @@ for i in range(10):
 #print(velocity)
 
 print()
-
+print(datalist[0])
 datalist = np.array(datalist)
 
 s.close()
@@ -400,8 +393,8 @@ def makeGrid(xPixel, yPixel, dim):
     xPos = []
     yPos = []
     for i in range(dim):
-        xPos.append(-7+xPixel*i)
-        yPos.append(-7+yPixel*i)
+        xPos.append(-1+xPixel*i)
+        yPos.append(-1+yPixel*i)
     return xPos, yPos
 
 #could improved
@@ -413,45 +406,49 @@ for i in range(len(datalist[0])):
 def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
     numY = len(yCor)
+    shiftlist = []
     sar_image_complex = np.zeros((numY,numX))
-<<<<<<< Updated upstream
-    platformX = -20
-    for x in range(numX):
-        for y in range(numY):
-            for scan in range(scanCount):
+    with alive_bar(numX) as bar:
+        for x in range(numX):
+            for y in range(numY):
+                #for scan in range(scanCount):
                 #RANGE_TO_TARGET = np.float(Point(platformX,15,5).distance(Point(x,y,0)))
                 #platformX += STEP_FOR_400000ps
                 oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
                 #print(oneWayRange)
-                closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
-                sar_image_complex[y][x] += datalist[scan][closestIndex]
-=======
-    with alive_bar(numX) as bar:
-        for x in range(numX):
-            for y in range(numY):
-                for scan in range(scanCount):
-                    #RANGE_TO_TARGET = np.float(Point(platformX,15,5).distance(Point(x,y,0)))
-                    #platformX += STEP_FOR_400000ps
-                    oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                    #print(oneWayRange)
-                    #closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
-                    totalTime = oneWayRange * 1e12 / SPEED_OF_LIGHT
-                    shift = int(totalTime / 61)
-                    sar_image_complex[y][x] += datalist[scan][shift]
+                #closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
+                totalTime = 2*oneWayRange * 1e12 / SPEED_OF_LIGHT
+                shift = min(int(totalTime / 61), len(datalist[0])-1)
+                shiftlist.append(shift)
+                sar_image_complex[y][x] += datalist[0][shift]
             bar()
->>>>>>> Stashed changes
+    print(shiftlist)
     #print(image)
     #print(sar_image_complex)
+    print(sar_image_complex)
     sar_image_complex /= abs(sar_image_complex).max()
-    print(sar_image_complex.max())
     #sar_image_complex /= abs(sar_image_complex).max()
     return sar_image_complex
 
-xPos, yPos = makeGrid(xPixel, yPixel, 70)
+xPos, yPos = makeGrid(xPixel, yPixel, 20)
 print()
 print(xPos)
 print(yPos)
-plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray')
-plt.show()
+print()
+print(message['scan_type'])
+platformPos = readPlatformPos(PLATFORM_POS)
+oneWayRange = np.sqrt((20)**2 + (15)**2 + (5)**2)
+totalTime = 2*oneWayRange * 1e12 / SPEED_OF_LIGHT
+print(totalTime / 61)
+shift = int(totalTime / 61)
+print(oneWayRange)
+print(totalTime)
+print(shift)
+zoomedInData = []
+for i in range(-5,6):
+    zoomedInData.append(datalist[0][shift+i])
+print(zoomedInData)
+#plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray')
+#plt.show()
 
 
