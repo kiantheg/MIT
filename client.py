@@ -372,8 +372,8 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
     #sar_image_complex /= abs(sar_image_complex).max()
     return sar_image_complex
 
-xPos = np.arange(-20,10,xPixel)
-yPos = np.arange(-20,10,yPixel)
+xPos = np.arange(-10,10,xPixel)
+yPos = np.arange(-10,10,yPixel)
 '''
 print()
 print()
