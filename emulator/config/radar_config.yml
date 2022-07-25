@@ -1,0 +1,6 @@
+# Radar configuration
+array: 
+  type: 'uniform_linear_array'
+  params:
+    beamwidth: 60 # (degrees)
+    elem_spacing: 0.5 # Fraction of center wavelength
