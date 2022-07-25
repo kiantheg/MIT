@@ -12,14 +12,11 @@ import matplotlib.pyplot as plt
 from collections import OrderedDict
 from Point import Point
 from alive_progress import alive_bar
-from Configuration import SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, SCAN_START, SCAN_END, SCAN_RES, BII, PLATFORM_POS
+from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, SCAN_START, SCAN_END, SCAN_RES, BII, PLATFORM_POS, COORDINATES
 #from constants import SPEED_OF_LIGHT
 
 #sets up constants
 messageID = 0
-scanCount = 200
-STEP_FOR_200000ps = 20 - 19.99056842
-STEP_FOR_400000ps = 20 - 19.98140632
 
 #sets up logger
 logger = logging.getLogger(__name__)
@@ -319,7 +316,7 @@ send_receive(encodeCtrlReq(scanCount))
 datalist = []
 timestamplist = []
 
-for scan in range(scanCount):
+for scan in range(SCAN_COUNT):
     data, address = s.recvfrom(4096)
     message = decodeScan(data)
     #logger.info(message['timestamp'])
@@ -347,35 +344,26 @@ def readPlatformPos(filepath):
     print(platformPos)
     return platformPos
 
-
-def makeGrid(xPixel, yPixel, dim):
-    xPos = []
-    yPos = []
-    for i in range(dim):
-        xPos.append(-10+xPixel*i)
-        yPos.append(-10+yPixel*i)
-    return xPos, yPos
-
 #could improved
 #distance = 61e-9 * SPEED_OF_LIGHT * 2
 rangeBins = []
 for i in range(len(datalist[0])):
     rangeBins.append(61e-12 * SPEED_OF_LIGHT * (i+1))
 
-def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
+def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
     numY = len(yCor)
     sar_image_complex = np.zeros((numY,numX))
     with alive_bar(numX) as bar:
         for x in range(numX):
             for y in range(numY):
-                for scan in range(scanCount):
+                for scan in range(SCAN_COUNT):
                     oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
                     #print(oneWayRange)
                     #closestIndex = np.argmin(np.abs(oneWayRange-rangeBins))
                     totalTime = 2*oneWayRange * 1e12 / SPEED_OF_LIGHT
-                    shift = min(int(totalTime / 61), len(datalist[0])-1)
-                    sar_image_complex[y][x] += datalist[0][shift]
+                    closestIndex = min(int(totalTime / 61), len(datalist[0])-1)
+                    sar_image_complex[y][x] += datalist[scan][closestIndex]
             bar()
     #print(image)
     #print(sar_image_complex)
@@ -383,9 +371,8 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     #sar_image_complex /= abs(sar_image_complex).max()
     return sar_image_complex
 
-xPos, yPos = makeGrid(xPixel, yPixel, 200)
-print(xPos)
-print(yPos)
+xPos = np.arange(-10,10,xPixel)
+yPos = np.arange(-10,10,yPixel)
 '''
 print()
 print()
@@ -403,5 +390,5 @@ for i in range(-5,6):
     zoomedInData.append(datalist[0][shift+i])
 print(zoomedInData)
 '''
-plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray')
-plt.show()
+#plt.imshow(paintImage(datalist, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray')
+#plt.show()
