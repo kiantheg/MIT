@@ -1,9 +1,21 @@
 from Point import Point
-from constants import SPEED_OF_LIGHT, BANDWIDTH, T0, CENTERED_WAVELENGTH, CENTERED_FREQUENCY
+import glob
+import os
 
+#Constants
+SPEED_OF_LIGHT = 299792458 # (m/s)
+K = 1.380649 * 10e-23 # Boltzmann constant (J/K)
+T0 = 290 # Standard system temperature (K)
+BANDWIDTH = 1.1 * 10e9
+CENTERED_FREQUENCY = 4.3 * 10e9
+CENTERED_WAVELENGTH = SPEED_OF_LIGHT/CENTERED_FREQUENCY
+VELOCITY = 66.730296
+
+list_of_files = glob.glob('/Users/rishita/bwsi22/emulator/output/*') # * means all if need specific format then *.csv
+latest_file = max(list_of_files, key=os.path.getctime)
 
 CPI = 0.74
-PLATFORM_POS = "/Users/zxiao23/Desktop/BWSISummer/team5/emulatorTest/input/PLATFORMPOS.pkl"
+PLATFORM_POS = latest_file
 #RANGE_RESOLUTION = SPEED_OF_LIGHT/(2* BANDWIDTH)
 #CROSS_RANGE_RESOLUTION = CENTERED_WAVELENGTH * RANGE_TO_TARGET / (2*VELOCITY*CPI)
 RANGE_RESOLUTION = 0.1
