@@ -328,4 +328,3 @@ with open('datalist.pkl', 'wb') as f:
     pkl.dump(datalist, f)
 
 s.close()
-
