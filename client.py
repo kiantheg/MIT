@@ -283,7 +283,7 @@ def encodeServerDisconnect():
     return message
 
 #1003
-def encodeCtrlReq(scanCount):
+def encodeCtrlReq(scanCount): 
     global messageID
     message = bytes.fromhex('1003') + int.to_bytes(messageID, 2, 'big')
     messageID += 1
@@ -293,7 +293,7 @@ def encodeCtrlReq(scanCount):
     message = message + int.to_bytes(reserved, 2, 'big')
     message = message + int.to_bytes(scanIntTime, 4, 'big')
     return message
-
+    
 
 def send_receive(message):
     s.sendall(message)
@@ -322,6 +322,7 @@ for scan in range(SCAN_COUNT):
     #logger.info(message['timestamp'])
     messageNum = message['num_messages_total']
     datalist.append(message['scan_data'])
+
     for i in range(messageNum-1):
         data, address = s.recvfrom(4096)
         message = decodeScan(data)
@@ -332,8 +333,7 @@ for scan in range(SCAN_COUNT):
 print()
 print(datalist[0])
 datalist = np.array(datalist)
-with open('mypickle.pickle', 'wb') as f:
-    pkl.dump(datalist, f)
+
 s.close()
 xPixel = CROSS_RANGE_RESOLUTION
 yPixel = RANGE_RESOLUTION
@@ -341,10 +341,9 @@ yPixel = RANGE_RESOLUTION
 def readPlatformPos(filepath):
     data = pkl.load(open(filepath, "rb"))
     platformPos = data['platform_pos']
-    print(platformPos)
     return platformPos
 
-def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
+'''def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
     numY = len(yCor)
     sar_image_complex = np.zeros((numY,numX))
@@ -353,12 +352,30 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
             for y in range(numY):
                 for scan in range(SCAN_COUNT):
                     oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                    totalTime = 2*oneWayRange * 1e12 / SPEED_OF_LIGHT
+                    totalTime = 2 * oneWayRange * 1e12 / SPEED_OF_LIGHT
                     closestIndex = min(int(totalTime / 61), len(datalist[0])-1)
                     sar_image_complex[x][y] += datalist[scan][closestIndex]
             bar()
     sar_image_complex /= abs(sar_image_complex).max()
-    return sar_image_complex
+    return sar_image_complex'''
+
+def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
+    numX = len(xCor)
+    numY = len(yCor)
+    image = np.zeros((numX, numY))
+    with alive_bar(SCAN_COUNT) as bar:
+        for scan in range(SCAN_COUNT):
+            xNP = np.asarray((xCor[:] - platformPos[scan][0])**2)
+            yNP = np.asarray((yCor[:] - platformPos[scan][1])**2)
+            temp = np.zeros((numX, numY))
+            temp = xNP[:, np.newaxis] + yNP[np.newaxis, :]
+            temp = np.sqrt(temp+(zOffset - platformPos[scan][2])**2) * 2e12 / SPEED_OF_LIGHT / 61
+            #closestIndex = np.array(2*np.sqrt((xCor[:] - platformPos[scan][0])**2 + (yCor[:] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2) * 1e12 / SPEED_OF_LIGHT / 61)
+            image[:] += datalist[scan][np.minimum(temp, np.full((numX,numY),len(datalist[0])-1)).astype(int)]
+            bar()
+    print(image)
+    print(np.shape(image))
+    return image
 
 xPos = np.arange(-10,10,xPixel)
 yPos = np.arange(-10,10,yPixel)

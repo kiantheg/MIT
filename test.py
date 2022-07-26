@@ -18,5 +18,5 @@ print(data)
 
 xPos = np.arange(-10,10,0.1)
 yPos = np.arange(-10,10,0.1)
-#with open('mypickle.pickle', 'wb') as f:
-    #pickle.dump(xPos, f)
+with open('datalist.pkl', 'wb') as f:
+    pickle.dump(xPos, f)
