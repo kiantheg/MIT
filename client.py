@@ -305,19 +305,20 @@ send_receive(encodeGetConf())
 
 send_receive(encodeCtrlReq(SCAN_COUNT))
 
-datalist = []
-with alive_bar(SCAN_COUNT) as bar:
-    for scan in range(SCAN_COUNT):
-        data, address = s.recvfrom(4096)
-        message = decodeScan(data)
-        #logger.info(message['timestamp'])
-        messageNum = message['num_messages_total']
-        datalist.append(message['scan_data'])
+messageID += 1
+data, address = s.recvfrom(4096)
+message = decodeScan(data)
+messageNum = message['num_messages_total']
 
-        for i in range(messageNum-1):
-            data, address = s.recvfrom(4096)
-            message = decodeScan(data)
-            datalist[scan] += message['scan_data']
+datalist = [[[0]*350]*(messageNum-1)+[[0]*(message['num_samples_total'] - 350*(messageNum-1))]]*SCAN_COUNT
+print(len(datalist))
+print(len(datalist[0]))
+with alive_bar(SCAN_COUNT*messageNum) as bar:
+    while (len(data) != 0):
+        message = decodeScan(data)
+        scan = int((message['message_id'] - 4 - message['message_index'])/messageNum)
+        datalist[scan][message['message_index']] = message['scan_data']
+        data, address = s.recvfrom(4096)
         bar()
 
 #CPI = (timestamplist[-1] - timestamplist[0])/1000
