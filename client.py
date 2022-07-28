@@ -1,8 +1,10 @@
+import copy
 import socket
 import logging
 import pickle as pkl
 import numpy as np
 from collections import OrderedDict
+import matplotlib.pyplot as plt
 from alive_progress import alive_bar
 from Configuration import SCAN_COUNT, SCAN_START, SCAN_END, SCAN_RES, BII
 #from constants import SPEED_OF_LIGHT
@@ -24,6 +26,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 port = 21210
 server_address = ("127.0.0.1", port)
 s.connect(server_address)
+s.settimeout(2)
 
 #Error Code Reader
 def errorCode(code):
@@ -309,21 +312,22 @@ messageID += 1
 data, address = s.recvfrom(4096)
 message = decodeScan(data)
 messageNum = message['num_messages_total']
-
-datalist = [[[0]*350]*(messageNum-1)+[[0]*(message['num_samples_total'] - 350*(messageNum-1))]]*SCAN_COUNT
-print(len(datalist))
-print(len(datalist[0]))
+datalist = np.zeros((SCAN_COUNT, message['num_samples_total']))
+end = False
 with alive_bar(SCAN_COUNT*messageNum) as bar:
-    while (len(data) != 0):
+    while not end:
         message = decodeScan(data)
-        scan = int((message['message_id'] - 4 - message['message_index'])/messageNum)
-        datalist[scan][message['message_index']] = message['scan_data']
-        data, address = s.recvfrom(4096)
+        index = message['message_index']
+        scan = int((message['message_id'] - 4 - index)/messageNum)
+        datalist[scan][index*350:(index*350+message['num_samples_message'])] = message['scan_data']
+        try:
+            data, address = s.recvfrom(4096)
+        except:
+            print("Finished gathering data")
+            end = True
         bar()
 
 #CPI = (timestamplist[-1] - timestamplist[0])/1000
-
-datalist = np.array(datalist)
 
 with open('datalist.pkl', 'wb') as f:
     pkl.dump(datalist, f)
