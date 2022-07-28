@@ -323,8 +323,6 @@ with alive_bar(SCAN_COUNT*messageNum) as bar:
 
 #CPI = (timestamplist[-1] - timestamplist[0])/1000
 
-datalist = np.array(datalist)
-
 with open('datalist.pkl', 'wb') as f:
     pkl.dump(datalist, f)
 
