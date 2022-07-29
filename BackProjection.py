@@ -5,28 +5,12 @@ from alive_progress import alive_bar
 from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, PLATFORM_POS, COORDINATES, SCAN_RES
 
 #read datalist from pickle file
-datalist = pkl.load(open("/Users/rishita/bwsi22/team5/datalist.pkl", "rb"))
+datalist = pkl.load(open("/Users/kianchen/Desktop/BeaverWorks/team5/datalist.pkl", "rb"))
 
 def readPlatformPos(filepath):
     data = pkl.load(open(filepath, "rb"))
     platformPos = data['platform_pos']
     return platformPos
-
-'''def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
-    numX = len(xCor)
-    numY = len(yCor)
-    sar_image_complex = np.zeros((numY,numX))
-    with alive_bar(numX) as bar:
-        for x in range(numX):
-            for y in range(numY):
-                for scan in range(SCAN_COUNT):
-                    oneWayRange = np.sqrt((xCor[x] - platformPos[scan][0])**2 + (yCor[y] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2)
-                    totalTime = 2 * oneWayRange * 1e12 / SPEED_OF_LIGHT
-                    closestIndex = min(int(totalTime / 61), len(datalist[0])-1)
-                    sar_image_complex[x][y] += datalist[scan][closestIndex]
-            bar()
-    sar_image_complex /= abs(sar_image_complex).max()
-    return sar_image_complex'''
 
 def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
@@ -48,22 +32,9 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
 
 xPos = np.arange(COORDINATES[0],COORDINATES[1],CROSS_RANGE_RESOLUTION)
 yPos = np.arange(COORDINATES[2],COORDINATES[3],RANGE_RESOLUTION)
-'''
-print()
-print()
-print(message['scan_type'])
-platformPos = readPlatformPos(PLATFORM_POS)
-oneWayRange = np.sqrt((20)**2 + (15)**2 + (5)**2)
-totalTime = 2*oneWayRange * 1e12 / SPEED_OF_LIGHT
-print(totalTime / 61)
-shift = int(totalTime / 61)
-print(oneWayRange)
-print(totalTime)
-print(shift)
-zoomedInData = []
-for i in range(-5,6):
-    zoomedInData.append(datalist[0][shift+i])
-print(zoomedInData)
-'''
-plt.imshow(paintImage(datalist, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray', origin='lower')
+
+plt.imshow(paintImage(datalist, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray', origin='lower', extent=COORDINATES)
+plt.colorbar()
+plt.xlabel("Meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" Pixels")
+plt.ylabel("Meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" Pixels")
 plt.show()
