@@ -292,9 +292,12 @@ def encodeCtrlReq(scanCount):
 
 def send_receive(message):
     s.sendall(message)
-    data, address = s.recvfrom(4096)
-    message = decodeMessage(data)
-    logger.info(message)
+    try:
+        data, address = s.recvfrom(4096)
+        message = decodeMessage(data)
+        logger.info(message)
+    except:
+        print("Message Dropped: #" + str(messageID))
 
 
 send_receive(encodeCommConf())
