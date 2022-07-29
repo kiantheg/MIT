@@ -5,7 +5,7 @@ from alive_progress import alive_bar
 from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, PLATFORM_POS, COORDINATES, SCAN_RES
 
 #read datalist from pickle file
-datalist = pkl.load(open("/Users/kianchen/Desktop/BeaverWorks/team5/datalist.pkl", "rb"))
+datalist = pkl.load(open("/Users/zxiao23/Desktop/BWSISummer/team5/datalist.pkl", "rb"))
 
 def readPlatformPos(filepath):
     data = pkl.load(open(filepath, "rb"))
@@ -35,6 +35,7 @@ yPos = np.arange(COORDINATES[2],COORDINATES[3],RANGE_RESOLUTION)
 
 plt.imshow(paintImage(datalist, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray', origin='lower', extent=COORDINATES)
 plt.colorbar()
-plt.xlabel("Meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" Pixels")
-plt.ylabel("Meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" Pixels")
+plt.xlabel("x-axis (meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" pixels)")
+plt.ylabel("y-axis (meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" pixels)")
+plt.title("Hello")
 plt.show()

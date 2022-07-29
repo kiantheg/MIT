@@ -11,19 +11,19 @@ CENTERED_FREQUENCY = 4.3 * 10e9
 CENTERED_WAVELENGTH = SPEED_OF_LIGHT/CENTERED_FREQUENCY
 VELOCITY = 66.730296
 
-list_of_files = glob.glob('/Users/kianchen/Desktop/BeaverWorks/emulator/output/*') # * means all if need specific format then *.csv
+list_of_files = glob.glob('/Users/zxiao23/Desktop/BWSISummer/emulator/output/*') # * means all if need specific format then *.csv
 latest_file = max(list_of_files, key=os.path.getctime)
 
 CPI = 0.74
 PLATFORM_POS = latest_file
 #RANGE_RESOLUTION = SPEED_OF_LIGHT/(2* BANDWIDTH)
 #CROSS_RANGE_RESOLUTION = CENTERED_WAVELENGTH * RANGE_TO_TARGET / (2*VELOCITY*CPI)
-COORDINATES = [50,100,-50,0] # x_start, x_end, y_start, y_end #img1 is -2,2 
+COORDINATES = [-10,10,-10,10] # x_start, x_end, y_start, y_end #img1 is -2,2 
 RANGE_RESOLUTION = 0.05 #img1 is 0.05
 CROSS_RANGE_RESOLUTION = RANGE_RESOLUTION
 
-SCAN_COUNT = 1
+SCAN_COUNT = 500
 SCAN_START = 0 #+/-499,998 ps
-SCAN_END = int(2*180e12/SPEED_OF_LIGHT) #+/-499,998 ps
+SCAN_END = int(2*50e12/SPEED_OF_LIGHT) #+/-499,998 ps
 SCAN_RES = 32 #1-511
 BII = 8 #6-15
