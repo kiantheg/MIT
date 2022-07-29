@@ -11,7 +11,7 @@ CENTERED_FREQUENCY = 4.3 * 10e9
 CENTERED_WAVELENGTH = SPEED_OF_LIGHT/CENTERED_FREQUENCY
 VELOCITY = 66.730296
 
-list_of_files = glob.glob('/Users/zxiao23/Desktop/BWSISummer/emulator/output/*') # * means all if need specific format then *.csv
+list_of_files = glob.glob(r'/Users/gheat/documents/github/emulator/output/*') # * means all if need specific format then *.csv
 latest_file = max(list_of_files, key=os.path.getctime)
 
 CPI = 0.74

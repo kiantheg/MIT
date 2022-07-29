@@ -5,7 +5,7 @@ from alive_progress import alive_bar
 from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, PLATFORM_POS, COORDINATES, SCAN_RES
 
 #read datalist from pickle file
-datalist = pkl.load(open("/Users/zxiao23/Desktop/BWSISummer/team5/datalist.pkl", "rb"))
+datalist = pkl.load(open(r'C:\Users\gheat\Documents\GitHub\team5\datalist.pkl', "rb"))
 
 def readPlatformPos(filepath):
     data = pkl.load(open(filepath, "rb"))
