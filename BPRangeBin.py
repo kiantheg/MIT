@@ -27,7 +27,7 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
             #needs to change temp = np.sqrt(temp+(zOffset - platformPos[scan][2])**2) * 2e12 / SPEED_OF_LIGHT / (SCAN_RES*1.907)
             #closestIndex = np.array(2*np.sqrt((xCor[:] - platformPos[scan][0])**2 + (yCor[:] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2) * 1e12 / SPEED_OF_LIGHT / 61)
             #image[:] += datalist[scan][np.argmin(np.abs(distance - rangeBins))]
-            temp = np.interp(distance, datalist[scan], rangeBins)
+            temp = np.interp(distance, rangeBins, datalist[scan])
             image += np.abs(datalist[scan][temp])
             bar()
     print(np.shape(image))
