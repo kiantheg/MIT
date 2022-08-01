@@ -5,7 +5,22 @@ from alive_progress import alive_bar
 from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, PLATFORM_POS, COORDINATES, SCAN_RES
 
 #read datalist from pickle file
-datalist = pkl.load(open("/Users/zxiao23/Desktop/BWSISummer/team5/datalist.pkl", "rb"))
+pathName = input("Who is running the code in team 5? (r/g/am/aw/k): ")
+filePath = ""
+if pathName == 'k':
+    filePath = "/Users/kianchen/Desktop/BeaverWorks/team5/datalist.pkl"
+elif pathName == 'am':
+    filePath = "/Users/zxiao23/Desktop/BWSISummer/team5/datalist.pkl"
+elif pathName == 'r':
+    filePath = "/Users/rishita/bwsi22/team5/datalist.pkl"
+elif pathName == 'g':
+    filePath = r"C:\Users\gheat\Documents\GitHub\team5\datalist.pkl"
+else:
+    filePath = r"\Users\xiaoz\Documents\BWSISummer\team5\datalist.pkl"
+
+datalist = pkl.load(open(filePath, "rb"))
+
+fileName = input("Which file are you back projecting?: ")
 
 def readPlatformPos(filepath):
     data = pkl.load(open(filepath, "rb"))
@@ -37,5 +52,5 @@ plt.imshow(paintImage(datalist, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap
 plt.colorbar()
 plt.xlabel("x-axis (meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" pixels)")
 plt.ylabel("y-axis (meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" pixels)")
-plt.title("Hello")
+plt.title(fileName)
 plt.show()

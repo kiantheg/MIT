@@ -7,9 +7,21 @@ from alive_progress import alive_bar
 from Configuration import COORDINATES, SPEED_OF_LIGHT, CROSS_RANGE_RESOLUTION, RANGE_RESOLUTION
 
 #change this to local file
+pathName = input("Who is running the code in team 5? (r/g/am/aw/k): ")
+filePath = ""
+if pathName == 'k':
+    filePath = "/Users/kianchen/Desktop/BeaverWorks/emulator/input/"
+elif pathName == 'am':
+    filePath = "/Users/zxiao23/Desktop/BWSISummer/emulator/input/"
+elif pathName == 'r':
+    filePath = "/Users/rishita/bwsi22/emulator/input/"
+elif pathName == 'g':
+    filePath = r"C:\Users\gheat\Documents\GitHub\emulator\input\\"
+else:
+    filePath = r"\Users\xiaoz\Documents\BWSISummer\emulator\input\\"
 
 fileName = "marathon_"+ input('Enter the file number: ') + ".pkl"
-data = pkl.load(open("/Users/kianchen/Desktop/BeaverWorks/emulator/input/" + fileName, "rb"))
+data = pkl.load(open(filePath + fileName, "rb"))
 
 datalist = data['scan_data']
 platformPos = data['platform_pos']

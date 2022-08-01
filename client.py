@@ -21,13 +21,6 @@ formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
-#sets up socket connection
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-port = 21210
-server_address = ("127.0.0.1", port)
-s.connect(server_address)
-s.settimeout(2)
-
 #Error Code Reader
 def errorCode(code):
     ##print(messageID)
@@ -299,40 +292,47 @@ def send_receive(message):
     except:
         print("Message Dropped: #" + str(messageID))
 
+answer = input("Do you want to run a new scan? (y/n): ")
 
-send_receive(encodeCommConf())
+if answer == 'y':
+    #sets up socket connection
+    #exec(open("./BackProjection.py").read())
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    port = 21210
+    server_address = ("127.0.0.1", port)
+    s.connect(server_address)
+    s.settimeout(2)
 
+    send_receive(encodeCommConf())
+    send_receive(encodeSetConf(SCAN_START, SCAN_END, SCAN_RES, BII))
+    send_receive(encodeGetConf())
+    send_receive(encodeCtrlReq(SCAN_COUNT))
 
-send_receive(encodeSetConf(SCAN_START, SCAN_END, SCAN_RES, BII))
+    messageID += 1
+    data, address = s.recvfrom(4096)
+    message = decodeScan(data)
+    messageNum = message['num_messages_total']
+    datalist = np.zeros((SCAN_COUNT, message['num_samples_total']))
+    end = False
+    with alive_bar(SCAN_COUNT*messageNum) as bar:
+        while not end:
+            message = decodeScan(data)
+            index = message['message_index']
+            scan = int((message['message_id'] - 4 - index)/messageNum)
+            datalist[scan][index*350:(index*350+message['num_samples_message'])] = message['scan_data']
+            try:
+                data, address = s.recvfrom(4096)
+            except:
+                print("Finished gathering data")
+                end = True
+            bar()
 
+    #CPI = (timestamplist[-1] - timestamplist[0])/1000
 
-send_receive(encodeGetConf())
+    with open('datalist.pkl', 'wb') as f:
+        pkl.dump(datalist, f)
 
-
-send_receive(encodeCtrlReq(SCAN_COUNT))
-
-messageID += 1
-data, address = s.recvfrom(4096)
-message = decodeScan(data)
-messageNum = message['num_messages_total']
-datalist = np.zeros((SCAN_COUNT, message['num_samples_total']))
-end = False
-with alive_bar(SCAN_COUNT*messageNum) as bar:
-    while not end:
-        message = decodeScan(data)
-        index = message['message_index']
-        scan = int((message['message_id'] - 4 - index)/messageNum)
-        datalist[scan][index*350:(index*350+message['num_samples_message'])] = message['scan_data']
-        try:
-            data, address = s.recvfrom(4096)
-        except:
-            print("Finished gathering data")
-            end = True
-        bar()
-
-#CPI = (timestamplist[-1] - timestamplist[0])/1000
-
-with open('datalist.pkl', 'wb') as f:
-    pkl.dump(datalist, f)
-
-s.close()
+    s.close()
+    exec(open("./BackProjection.py").read())
+else:
+    exec(open("./BackProjection.py").read())
