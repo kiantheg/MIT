@@ -24,7 +24,8 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
             temp = xNP[np.newaxis,:] + yNP[:, np.newaxis]
             temp = np.sqrt(temp+(zOffset - platformPos[scan][2])**2) * 2e12 / SPEED_OF_LIGHT / (SCAN_RES*1.907)
             #closestIndex = np.array(2*np.sqrt((xCor[:] - platformPos[scan][0])**2 + (yCor[:] - platformPos[scan][1])**2 + (zOffset - platformPos[scan][2])**2) * 1e12 / SPEED_OF_LIGHT / 61)
-            image[:] += datalist[scan][np.minimum(temp, np.full((numX,numY),len(datalist[0])-1)).astype(int)]
+            
+            image[:] += datalist[scan][temp.astype(int)]
             bar()
     print(image)
     print(np.shape(image))
