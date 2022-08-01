@@ -7,6 +7,8 @@ from collections import OrderedDict
 import matplotlib.pyplot as plt
 from alive_progress import alive_bar
 from Configuration import SCAN_COUNT, SCAN_START, SCAN_END, SCAN_RES, BII
+import os
+import subprocess
 #from constants import SPEED_OF_LIGHT
 
 #sets up constants
@@ -296,7 +298,6 @@ answer = input("Do you want to run a new scan? (y/n): ")
 
 if answer == 'y':
     #sets up socket connection
-    #exec(open("./BackProjection.py").read())
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     port = 21210
     server_address = ("127.0.0.1", port)

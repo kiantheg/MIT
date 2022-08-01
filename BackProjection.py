@@ -2,18 +2,17 @@ import pickle as pkl
 import numpy as np
 import matplotlib.pyplot as plt
 from alive_progress import alive_bar
-from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, PLATFORM_POS, COORDINATES, SCAN_RES
+from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, PLATFORM_POS, COORDINATES, SCAN_RES, USER
 
+filePath=""
 #read datalist from pickle file
-pathName = input("Who is running the code in team 5? (r/g/am/aw/k): ")
-filePath = ""
-if pathName == 'k':
+if USER == 'k':
     filePath = "/Users/kianchen/Desktop/BeaverWorks/team5/datalist.pkl"
-elif pathName == 'am':
+elif USER == 'am':
     filePath = "/Users/zxiao23/Desktop/BWSISummer/team5/datalist.pkl"
-elif pathName == 'r':
+elif USER == 'r':
     filePath = "/Users/rishita/bwsi22/team5/datalist.pkl"
-elif pathName == 'g':
+elif USER == 'g':
     filePath = r"C:\Users\gheat\Documents\GitHub\team5\datalist.pkl"
 else:
     filePath = r"\Users\xiaoz\Documents\BWSISummer\team5\datalist.pkl"

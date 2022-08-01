@@ -4,18 +4,17 @@ import pickle as pkl
 import numpy as np
 import matplotlib.pyplot as plt
 from alive_progress import alive_bar
-from Configuration import COORDINATES, SPEED_OF_LIGHT, CROSS_RANGE_RESOLUTION, RANGE_RESOLUTION
+from Configuration import COORDINATES, SPEED_OF_LIGHT, CROSS_RANGE_RESOLUTION, RANGE_RESOLUTION, USER
 
 #change this to local file
-pathName = input("Who is running the code in team 5? (r/g/am/aw/k): ")
 filePath = ""
-if pathName == 'k':
+if USER == 'k':
     filePath = "/Users/kianchen/Desktop/BeaverWorks/emulator/input/"
-elif pathName == 'am':
+elif USER == 'am':
     filePath = "/Users/zxiao23/Desktop/BWSISummer/emulator/input/"
-elif pathName == 'r':
+elif USER == 'r':
     filePath = "/Users/rishita/bwsi22/emulator/input/"
-elif pathName == 'g':
+elif USER == 'g':
     filePath = r"C:\Users\gheat\Documents\GitHub\emulator\input\\"
 else:
     filePath = r"\Users\xiaoz\Documents\BWSISummer\emulator\input\\"
