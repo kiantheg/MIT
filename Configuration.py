@@ -11,14 +11,14 @@ CENTERED_FREQUENCY = 4.3 * 10e9
 CENTERED_WAVELENGTH = SPEED_OF_LIGHT/CENTERED_FREQUENCY
 VELOCITY = 66.730296
 
-list_of_files = glob.glob('/Users/zxiao23/Desktop/BWSISummer/emulator/output/*') # * means all if need specific format then *.csv
+list_of_files = glob.glob('/Users/rishita/bwsi22/emulator/output/*') # * means all if need specific format then *.csv
 latest_file = max(list_of_files, key=os.path.getctime)
 
 CPI = 0.74
 PLATFORM_POS = latest_file
 #RANGE_RESOLUTION = SPEED_OF_LIGHT/(2* BANDWIDTH)
 #CROSS_RANGE_RESOLUTION = CENTERED_WAVELENGTH * RANGE_TO_TARGET / (2*VELOCITY*CPI)
-COORDINATES = [-75,75,-75,75] # x_start, x_end, y_start, y_end #img1 is -2,2 
+COORDINATES = [-130,-50,-115,-35] # x_start, x_end, y_start, y_end #img1 is -2,2 
 RANGE_RESOLUTION = 0.1 #img1 is 0.05
 CROSS_RANGE_RESOLUTION = RANGE_RESOLUTION
 

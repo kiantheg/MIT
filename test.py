@@ -5,9 +5,17 @@ from alive_progress import alive_bar
 from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, PLATFORM_POS, COORDINATES, SCAN_RES
 
 #read datalist from pickle file
-datalist = pkl.load(open("/Users/zxiao23/Desktop/BWSISummer/team5/datalist.pkl", "rb"))
 
-rangeBins = np.arange(0,)
+
+data = pkl.load(open("/Users/rishita/bwsi22/emulator/marathon_0.pkl", "rb"))
+
+datalist = data['scan_data']
+platformPos = data['platform_pos']
+SCAN_COUNT = len(data['scan_data'])
+
+r = 61 * SPEED_OF_LIGHT / 2e12
+rangeBins = np.arange(0, r*len(datalist[0]), r)
+
 def readPlatformPos(filepath):
     data = pkl.load(open(filepath, "rb"))
     platformPos = data['platform_pos']
@@ -36,7 +44,7 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
 xPos = np.arange(COORDINATES[0],COORDINATES[1],CROSS_RANGE_RESOLUTION)
 yPos = np.arange(COORDINATES[2],COORDINATES[3],RANGE_RESOLUTION)
 
-plt.imshow(paintImage(datalist, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray', origin='lower', extent=COORDINATES)
+plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray', origin='lower', extent=COORDINATES)
 plt.colorbar()
 plt.xlabel("x-axis (meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" pixels)")
 plt.ylabel("y-axis (meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" pixels)")
