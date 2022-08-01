@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from fileinput import filename
 import pickle as pkl
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,7 +7,9 @@ from alive_progress import alive_bar
 from Configuration import COORDINATES, SPEED_OF_LIGHT, CROSS_RANGE_RESOLUTION, RANGE_RESOLUTION
 
 #change this to local file
-data = pkl.load(open("/Users/rishita/bwsi22/emulator/marathon_0.pkl", "rb"))
+
+fileName = "marathon_"+ input('Enter the file number: ') + ".pkl"
+data = pkl.load(open("/Users/kianchen/Desktop/BeaverWorks/emulator/input/" + fileName, "rb"))
 
 datalist = data['scan_data']
 platformPos = data['platform_pos']
@@ -40,5 +43,5 @@ plt.imshow(paintImage(datalist, rangeBins, platformPos, xPos, yPos), cmap='gray'
 plt.colorbar()
 plt.xlabel("x-axis (meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" pixels)")
 plt.ylabel("y-axis (meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" pixels)")
-plt.title("Hello")
+plt.title(fileName)
 plt.show()
