@@ -24,7 +24,7 @@ elif USER == 'g':
 else:
     filePath = r"\Users\xiaoz\Documents\BWSISummer\emulator\output\*"
 
-list_of_files = glob.glob('/Users/kianchen/Desktop/BeaverWorks/emulator/output/*') # * means all if need specific format then *.csv
+list_of_files = glob.glob(filePath) # * means all if need specific format then *.csv
 latest_file = max(list_of_files, key=os.path.getctime)
 
 CPI = 0.74
@@ -32,7 +32,7 @@ PLATFORM_POS = latest_file
 #RANGE_RESOLUTION = SPEED_OF_LIGHT/(2* BANDWIDTH)
 #CROSS_RANGE_RESOLUTION = CENTERED_WAVELENGTH * RANGE_TO_TARGET / (2*VELOCITY*CPI)
 COORDINATES = [-50,50,-50,50] # x_start, x_end, y_start, y_end #img1 is -2,2 
-RANGE_RESOLUTION = 0.05 #img1 is 0.05
+RANGE_RESOLUTION = 0.1 #img1 is 0.05
 CROSS_RANGE_RESOLUTION = RANGE_RESOLUTION
 
 SCAN_COUNT = 1000

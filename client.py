@@ -169,9 +169,10 @@ def decodeScan(data):
     m['num_samples_total'] = int.from_bytes(data[44:48],'big')
     m['message_index'] = int.from_bytes(data[48:50],'big')
     m['num_messages_total'] = int.from_bytes(data[50:52],'big')
+    m['scan_data'] = []
     #could improve
-    arr = bytearray(data[52::4])
-    m['scan_data'] = np.array(arr,'big', signed=True)
+    for i in range(m['num_samples_message']):
+        m['scan_data'].append(int.from_bytes(data[52+(i*4):56+(i*4)],'big', signed=True))
     return m
 
 
