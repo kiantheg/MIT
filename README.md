@@ -10,9 +10,12 @@
 
 ## How to Run Our Code:
 * Open up two terminal prompts, one will be for running the emulator server and the other will be running for this repository's program.
-   * If you don't already have the emulator repo, download it here --> [Emulator](https://github.com/bwsiuassar/emulator.gite)
+   * If you don't already have the emulator repo, download it here --> [emulator](https://github.com/bwsiuassar/emulator.gite)
    * Recommended emulator settings:
-   > Logger state = STATUS
+    * Logger state = `STATUS`
+   * Look at the emulator readme for running emulator commands --> [emulator commands] (https://github.com/bwsiuassar/emulator#511-arguments)
+   > Our code runs with all op_modes (develop, test, real) 
+
         
         
 
