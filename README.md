@@ -3,7 +3,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-# UAS-SAR 22': team5
+# UAS-SAR: team5
 
 ### rishita dhalbisoi, kian chen, g simmons, ziqian xiao :)
 
@@ -19,10 +19,10 @@
 * Open up another new terminal window while the emulator is running. This terminal window is where you will run our code.
 * Run `client.py` and follow the prompted messages to execute the progra,
 
-##Configurations
+## Configurations
 * We currently have set configurations in `configurations.py`. Feel free to change certain paramaters such as `scan_count` and `range_resolution` here.
 
-Enjoy :D
+## Enjoy :D
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]:
