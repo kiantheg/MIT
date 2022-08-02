@@ -3,10 +3,22 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-# team5
+# UAS-SAR 22': team5
 
-rishita dhalbisoi, kian chen, g simmons, ziqian xiao
-:)
+### rishita dhalbisoi, kian chen, g simmons, ziqian xiao
+### :)
+
+## How to Run Our Code:
+* Open up two terminal prompts, one will be for running the emulator server and the other will be running for this repository's program.
+   * If you don't already have the emulator repo, download it here --> [Emulator](https://github.com/bwsiuassar/emulator.gite)
+   * Recommended emulator settings:
+   > Logger state = STATUS
+        
+        
+
+
+
+
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]:
