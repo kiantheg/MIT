@@ -1,4 +1,3 @@
-import copy
 import socket
 import logging
 import pickle as pkl
@@ -6,7 +5,7 @@ import numpy as np
 from collections import OrderedDict
 import matplotlib.pyplot as plt
 from alive_progress import alive_bar
-from Configuration import SCAN_COUNT, SCAN_START, SCAN_END, SCAN_RES, BII
+from Configuration import SCAN_COUNT, SCAN_START, SCAN_END, SCAN_RES, BII, SPEED_OF_LIGHT
 import os
 import subprocess
 #from constants import SPEED_OF_LIGHT
@@ -225,6 +224,7 @@ def encodeSetConf(scanStart, scanEnd, scan_res, baseInter):
     message = bytes.fromhex("1001") + int.to_bytes(messageID, 2, 'big')
     messageID += 1
     node_id = 1
+    scanEnd = int(scanEnd*2e12/SPEED_OF_LIGHT)
     message = message + int.to_bytes(node_id, 4, 'big')
     message = message + int.to_bytes(scanStart, 4, 'big', signed = True)
     message = message + int.to_bytes(scanEnd, 4, 'big', signed = True)
@@ -327,8 +327,6 @@ if answer == 'y':
                 print("Finished gathering data")
                 end = True
             bar()
-
-    #CPI = (timestamplist[-1] - timestamplist[0])/1000
 
     with open('datalist.pkl', 'wb') as f:
         pkl.dump(datalist, f)

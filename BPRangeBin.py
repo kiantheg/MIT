@@ -4,7 +4,7 @@ import pickle as pkl
 import numpy as np
 import matplotlib.pyplot as plt
 from alive_progress import alive_bar
-from Configuration import COORDINATES, SPEED_OF_LIGHT, CROSS_RANGE_RESOLUTION, RANGE_RESOLUTION, USER
+from Configuration import COORDINATES, CROSS_RANGE_RESOLUTION, RANGE_RESOLUTION, USER, USER_SYSTEM
 
 #change this to local file
 filePath = ""
@@ -16,8 +16,12 @@ elif USER == 'r':
     filePath = "/Users/rishita/bwsi22/emulator/input/"
 elif USER == 'g':
     filePath = r"C:\Users\gheat\Documents\GitHub\emulator\input\\"
-else:
+elif USER == 'aw':
     filePath = r"\Users\xiaoz\Documents\BWSISummer\emulator\input\\"
+else:
+    filePath = input("Please enter your path to the source folder of the data: ")
+    if USER_SYSTEM == 'w':
+        filePath = repr(filePath)
 
 fileName = "marathon_"+ input('Enter the file number: ') + ".pkl"
 data = pkl.load(open(filePath + fileName, "rb"))
