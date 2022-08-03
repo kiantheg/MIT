@@ -12,10 +12,14 @@
 
 ## Running Our Program
 * Open up another new terminal window while the emulator is running. This terminal window is where you will run our code.
-* Run `client.py` and follow the prompted messages to execute the progra,
+* Run `client.py` and follow the prompted messages to execute the program
 
 ## Configurations
-* We currently have set configurations in `configurations.py`. Feel free to change certain paramaters such as `scan_count` and `range_resolution` here.
+* We currently have set configurations in `configurations.py`. Feel free to change the paramaters such as `scan_count` and `range_resolution` here.
+   * Change COORDINATES to adjust where you want your image to be.
+   * Change RANGE_RESOLUTION and CROSS_RANGE_RESOLUTION to make the pixels the size you want.
+   * Change SCAN_END to adjust the range you want to scan (we don't recommand to adjust the SCAN_START time)
+   * Change SCAN_RES and BII to adjust the resolution (read P440 API for more details [P440 API] (https://github.com/bwsiuassar/emulator/blob/main/docs/320-0298E-MRM-API-Specification.pdf)
 
 ## Enjoy :D
 
