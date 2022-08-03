@@ -36,7 +36,7 @@ COORDINATES = [-50,50,-50,50] # x_start, x_end, y_start, y_end #img1 is -2,2
 RANGE_RESOLUTION = 0.1 #img1 is 0.05
 CROSS_RANGE_RESOLUTION = RANGE_RESOLUTION
 
-SCAN_COUNT = 1000
+SCAN_COUNT = 65535
 SCAN_START = 0 #in meters
 SCAN_END = 50 #in meters
 SCAN_RES = 32 #1-511
