@@ -28,6 +28,7 @@ else:
         PLAT_PATH = repr(PLAT_PATH + '\*')
     else:
         PLAT_PATH = PLAT_PATH + '/*'
+    print("New path:" + PLAT_PATH)
 
 CPI = 0.74
 #RANGE_RESOLUTION = SPEED_OF_LIGHT/(2* BANDWIDTH)
