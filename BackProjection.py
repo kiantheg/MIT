@@ -10,6 +10,7 @@ datalist = pkl.load(open("datalist.pkl", "rb"))
 
 fileName = input("What is the title of the image?: ")
 
+
 def readPlatformPos():
     list_of_files = glob.glob(PLAT_PATH) # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
@@ -25,7 +26,6 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
         for scan in range(SCAN_COUNT):
             xNP = np.asarray((xCor[:] - platformPos[scan][0])**2)
             yNP = np.asarray((yCor[:] - platformPos[scan][1])**2)
-            temp = np.zeros((numX, numY))
             temp = xNP[np.newaxis,:] + yNP[:, np.newaxis]
             temp = np.sqrt(temp+(zOffset - platformPos[scan][2])**2) * 2e12 / SPEED_OF_LIGHT / (SCAN_RES*1.907)
             image[:] += datalist[scan][np.minimum(temp, np.full((numX,numY),len(datalist[0])-1)).astype(int)]

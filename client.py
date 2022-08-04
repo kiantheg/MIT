@@ -8,6 +8,9 @@ from alive_progress import alive_bar
 from Configuration import SCAN_COUNT, SCAN_START, SCAN_END, SCAN_RES, BII, SPEED_OF_LIGHT
 #from constants import SPEED_OF_LIGHT
 
+answer = input("Do you want to run a new scan? (y/n): ")
+running = input("Press any button if emulator is running")
+
 #sets up constants
 messageID = 0
 
@@ -291,8 +294,6 @@ def send_receive(message):
         logger.info(message)
     except:
         print("Message Dropped: #" + str(messageID))
-
-answer = input("Do you want to run a new scan? (y/n): ")
 
 if answer == 'y':
     #sets up socket connection
