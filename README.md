@@ -4,6 +4,7 @@
 
 ## Getting Emulator ready:
 * If you don't already have the emulator repo, download it here --> [emulator](https://github.com/bwsiuassar/emulator.gite)
+* **Please ensure that the emulator is in the same folder as the team 5 directory!**
 * Recommended emulator settings:
     * Logger state = `STATUS`
 * Look at the emulator readme for running emulator commands --> [emulator commands] (https://github.com/bwsiuassar/emulator#511-arguments)
