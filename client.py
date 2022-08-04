@@ -9,7 +9,6 @@ from Configuration import SCAN_COUNT, SCAN_START, SCAN_END, SCAN_RES, BII, SPEED
 #from constants import SPEED_OF_LIGHT
 
 answer = input("Do you want to run a new scan? (y/n): ")
-running = input("Press any button if emulator is running and ready")
 
 #sets up constants
 messageID = 0
@@ -297,6 +296,7 @@ def send_receive(message):
 
 if answer == 'y':
     #sets up socket connection
+    running = input("Press any button if emulator is running and ready")
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     port = 21210
     server_address = ("127.0.0.1", port)
