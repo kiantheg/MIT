@@ -1,0 +1,5 @@
+##ignoring pycache
+__pycache__/
+
+##ignore ds store
+.DS_Store
