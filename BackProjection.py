@@ -4,13 +4,19 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 from alive_progress import alive_bar
-from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, COORDINATES, SCAN_RES, PLAT_PATH
+from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, COORDINATES, SCAN_RES, USER_SYSTEM
 
 datalist = pkl.load(open("datalist.pkl", "rb"))
 
 fileName = input("What is the title of the image?: ")
 
 def readPlatformPos(platPath):
+    dir = os.path.dirname(__file__)
+    platPath = ""
+    if USER_SYSTEM == 'w':
+        platPath = os.path.join(dir, '..\emulator\output\*')
+    else:
+        platPath = os.path.join(dir, '../emulator/output/*')
     list_of_files = glob.glob(platPath) # * means all if need specific format then *.csv
     latest_file = max(list_of_files, key=os.path.getctime)
     data = pkl.load(open(latest_file, "rb"))

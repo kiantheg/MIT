@@ -10,12 +10,6 @@ CENTERED_WAVELENGTH = SPEED_OF_LIGHT/CENTERED_FREQUENCY
 VELOCITY = 66.730296
 
 USER_SYSTEM = input("Which system are you running on? (w/m): ")
-dir = os.path.dirname(__file__)
-PLAT_PATH = ""
-if USER_SYSTEM == 'w':
-    PLAT_PATH = os.path.join(dir, '..\emulator\output\*')
-else:
-    PLAT_PATH = os.path.join(dir, '../emulator/output/*')
 
 
 CPI = 0.74
