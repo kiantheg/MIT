@@ -9,7 +9,7 @@ from Configuration import SCAN_COUNT, SCAN_START, SCAN_END, SCAN_RES, BII, SPEED
 #from constants import SPEED_OF_LIGHT
 
 answer = input("Do you want to run a new scan? (y/n): ")
-running = input("Press any button if emulator is running")
+running = input("Press any button if emulator is running and ready")
 
 #sets up constants
 messageID = 0
