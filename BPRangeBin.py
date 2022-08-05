@@ -14,13 +14,16 @@ if USER_SYSTEM == 'w':
 else:
     filePath = os.path.join(dir, '../emulator/input/')
 
-fileName = "marathon_"+ input('Enter the file number: ') + ".pkl"
+fileNumber = input('Enter the file number: ')
+fileName = "marathon_"+ fileNumber + ".pkl"
 data = pkl.load(open(filePath + fileName, "rb"))
 
 datalist = data['scan_data']
 platformPos = data['platform_pos']
 rangeBins = data['range_bins']
 SCAN_COUNT = len(data['scan_data'])
+
+pixeldata = {}
 
 def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
     numX = len(xCor)
@@ -43,10 +46,18 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
 
 xPos = np.arange(COORDINATES[0],COORDINATES[1],CROSS_RANGE_RESOLUTION)
 yPos = np.arange(COORDINATES[2],COORDINATES[3],RANGE_RESOLUTION)
+pixeldata["x"] = xPos
+pixeldata["y"] = yPos
+
 
 plt.imshow(paintImage(datalist, rangeBins, platformPos, xPos, yPos), cmap='gray', origin='lower', extent=COORDINATES)
 plt.colorbar()
 plt.xlabel("x-axis (meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" pixels)")
 plt.ylabel("y-axis (meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" pixels)")
 plt.title(fileName)
+plt.savefig("marathon_images/finalimages/marathon_{}_thumbnail.jpg".format(fileNumber)) #save as jpg
+
+with open('marathon_images/imagedicts/marathon_{}_image.pkl'.format(fileNumber), 'wb') as f:
+        pkl.dump(pixeldata, f)
+
 plt.show()
