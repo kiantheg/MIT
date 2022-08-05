@@ -43,7 +43,7 @@ yPos = np.arange(COORDINATES[2],COORDINATES[3],RANGE_RESOLUTION)
 
 image = paintImage(datalist, readPlatformPos(), xPos, yPos)
 saveDic = {'img': image, 'x': xPos, 'y': yPos}
-with open('hide_and_seek_images/imagedicts/hide_and_seek_{}_img.pkl'.format(imgNum), 'wb') as f:
+with open('hideandseek_images/imagedicts/hide_and_seek_{}_img.pkl'.format(imgNum), 'wb') as f:
     pkl.dump(saveDic, f)
 
 plt.imshow(image, cmap='gray', origin='lower', extent=COORDINATES)
@@ -51,5 +51,5 @@ plt.colorbar()
 plt.xlabel("x-axis (meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" pixels)")
 plt.ylabel("y-axis (meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" pixels)")
 plt.title('hide_and_seek_{}_thumbnail'.format(imgNum))
-plt.savefig("hideandseek_images/finalimages/hide_and_seek_{}_img.pkl")
+plt.savefig("hideandseek_images/finalimages/hide_and_seek_{}_img.jpg")
 plt.show()
