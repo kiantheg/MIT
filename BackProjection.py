@@ -36,8 +36,6 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
             temp = np.sqrt(temp+(zOffset - platformPos[scan][2])**2) * 2e12 / SPEED_OF_LIGHT / (SCAN_RES*1.907)
             image[:] += datalist[scan][np.minimum(temp, np.full((numX,numY),len(datalist[0])-1)).astype(int)]
             bar()
-    print(image)
-    print(np.shape(image))
     return image
 
 xPos = np.arange(COORDINATES[0],COORDINATES[1],CROSS_RANGE_RESOLUTION)

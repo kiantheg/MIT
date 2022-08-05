@@ -39,7 +39,6 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
             temp = np.interp(distance, rangeBins, datalist[scan])
             image += temp
             bar()
-    print(np.shape(image))
     return np.abs(image)
 
 xPos = np.arange(COORDINATES[0],COORDINATES[1],CROSS_RANGE_RESOLUTION)

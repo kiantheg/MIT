@@ -15,7 +15,7 @@ USER_SYSTEM = input("Which system are you running on? (w/m): ")
 CPI = 0.74
 #RANGE_RESOLUTION = SPEED_OF_LIGHT/(2* BANDWIDTH)
 #CROSS_RANGE_RESOLUTION = CENTERED_WAVELENGTH * RANGE_TO_TARGET / (2*VELOCITY*CPI)
-COORDINATES = [-120,-20,-150,-50] # x_start, x_end, y_start, y_end #img1 is -2,2 
+COORDINATES = [-25,25,-25,25] # x_start, x_end, y_start, y_end #img1 is -2,2 
 RANGE_RESOLUTION = 0.05 #img1 is 0.05
 CROSS_RANGE_RESOLUTION = RANGE_RESOLUTION
 
