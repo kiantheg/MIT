@@ -25,8 +25,16 @@ SCAN_COUNT = len(data['scan_data'])
 r = 61 * SPEED_OF_LIGHT / 2e12
 rangeBins = np.arange(0, r*len(datalist[0]), r)
 
-def readPlatformPos(filepath):
-    data = pkl.load(open(filepath, "rb"))
+def readPlatformPos():
+    dir = os.path.dirname(__file__)
+    platPath = ""
+    if USER_SYSTEM == 'w':
+        platPath = os.path.join(dir, '..\emulator\output\*')
+    else:
+        platPath = os.path.join(dir, '../emulator/output/*')
+    list_of_files = glob.glob(platPath) # * means all if need specific format then *.csv
+    latest_file = max(list_of_files, key=os.path.getctime)
+    data = pkl.load(open(latest_file, "rb"))
     platformPos = data['platform_pos']
     return platformPos
 
@@ -53,7 +61,7 @@ def paintImage(datalist, rangeBins, platformPos, xCor, yCor, zOffset = 0):
 xPos = np.arange(COORDINATES[0],COORDINATES[1],CROSS_RANGE_RESOLUTION)
 yPos = np.arange(COORDINATES[2],COORDINATES[3],RANGE_RESOLUTION)
 
-plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(PLATFORM_POS), xPos, yPos), cmap='gray', origin='lower', extent=COORDINATES)
+plt.imshow(paintImage(datalist, rangeBins, readPlatformPos(), xPos, yPos), cmap='gray', origin='lower', extent=COORDINATES)
 plt.colorbar()
 plt.xlabel("x-axis (meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" pixels)")
 plt.ylabel("y-axis (meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" pixels)")
