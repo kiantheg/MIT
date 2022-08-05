@@ -53,4 +53,3 @@ plt.ylabel("y-axis (meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RES
 plt.title('hide_and_seek_{}_thumbnail'.format(imgNum))
 plt.savefig("hideandseek_images/finalimages/hide_and_seek_{}_img.pkl")
 plt.show()
-
