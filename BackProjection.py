@@ -8,7 +8,7 @@ from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RA
 
 datalist = pkl.load(open("datalist.pkl", "rb"))
 
-fileName = input("What is the title of the image?: ")
+imgNum = input("What is the number of the hide and seek image?: ")
 
 def readPlatformPos():
     dir = os.path.dirname(__file__)
@@ -41,9 +41,16 @@ def paintImage(datalist, platformPos, xCor, yCor, zOffset = 0):
 xPos = np.arange(COORDINATES[0],COORDINATES[1],CROSS_RANGE_RESOLUTION)
 yPos = np.arange(COORDINATES[2],COORDINATES[3],RANGE_RESOLUTION)
 
-plt.imshow(paintImage(datalist, readPlatformPos(), xPos, yPos), cmap='gray', origin='lower', extent=COORDINATES)
+image = paintImage(datalist, readPlatformPos(), xPos, yPos)
+saveDic = {'img': image, 'x': xPos, 'y': yPos}
+with open('hide_and_seek_images/imagedicts/hide_and_seek_{}_img.pkl'.format(imgNum), 'wb') as f:
+    pkl.dump(saveDic, f)
+
+plt.imshow(image, cmap='gray', origin='lower', extent=COORDINATES)
 plt.colorbar()
 plt.xlabel("x-axis (meters/"+str((COORDINATES[1]-COORDINATES[0])/RANGE_RESOLUTION)+" pixels)")
 plt.ylabel("y-axis (meters/"+str((COORDINATES[3]-COORDINATES[2])/CROSS_RANGE_RESOLUTION)+" pixels)")
-plt.title(fileName)
+plt.title('hide_and_seek_{}_thumbnail'.format(imgNum))
+plt.savefig("hideandseek_images/finalimages/hide_and_seek_{}_img.pkl")
 plt.show()
+

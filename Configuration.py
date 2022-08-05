@@ -15,12 +15,12 @@ USER_SYSTEM = input("Which system are you running on? (w/m): ")
 CPI = 0.74
 #RANGE_RESOLUTION = SPEED_OF_LIGHT/(2* BANDWIDTH)
 #CROSS_RANGE_RESOLUTION = CENTERED_WAVELENGTH * RANGE_TO_TARGET / (2*VELOCITY*CPI)
-COORDINATES = [-25,25,-25,25] # x_start, x_end, y_start, y_end #img1 is -2,2 
-RANGE_RESOLUTION = 0.05 #img1 is 0.05
+COORDINATES = [-10,0,-10,0] # x_start, x_end, y_start, y_end #img1 is -2,2 
+RANGE_RESOLUTION = 0.1 #img1 is 0.05
 CROSS_RANGE_RESOLUTION = RANGE_RESOLUTION
 
 SCAN_COUNT = 1000
 SCAN_START = 0 #in meters
-SCAN_END = 50 #in meters
+SCAN_END = 70 #in meters
 SCAN_RES = 32 #1-511
 BII = 8 #6-15
