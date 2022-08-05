@@ -1,13 +1,22 @@
+import os
 import pickle as pkl
 import numpy as np
 import matplotlib.pyplot as plt
 from alive_progress import alive_bar
-from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, PLATFORM_POS, COORDINATES, SCAN_RES
+from Configuration import SCAN_COUNT, SPEED_OF_LIGHT, RANGE_RESOLUTION, CROSS_RANGE_RESOLUTION, COORDINATES, USER_SYSTEM
 
 #read datalist from pickle file
 
+filePath = ""
+dir = os.path.dirname(__file__)
+filePath = ""
+if USER_SYSTEM == 'w':
+    filePath = os.path.join(dir, '..\emulator\input\\')
+else:
+    filePath = os.path.join(dir, '../emulator/input/')
 
-data = pkl.load(open("/Users/rishita/bwsi22/emulator/marathon_0.pkl", "rb"))
+fileName = "marathon_"+ input('Enter the file number: ') + ".pkl"
+data = pkl.load(open(filePath + fileName, "rb"))
 
 datalist = data['scan_data']
 platformPos = data['platform_pos']
