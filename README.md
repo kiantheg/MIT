@@ -26,3 +26,4 @@
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [Contributions] (https://github.com/bwsiuassar/team5/graphs/contributors)
+# MIT
